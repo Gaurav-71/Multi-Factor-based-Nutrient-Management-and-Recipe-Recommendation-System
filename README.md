@@ -8,7 +8,7 @@ The project's main goal is to create an intelligent recipe recommender that woul
 
 ## Team Members
 
-- Team Mentor : Mrs. Chandrika Prasad
+- Team Mentor : Dr. Shilpa Shashikant Chaudhari
 
 - Aravind Shreyas Ramesh, 1MS18CS025
 
