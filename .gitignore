@@ -1,4 +1,4 @@
 .DS_STORE
 **/APIKey.txt
 **/chromedriver.exe
-**/test
+**/node_modules
