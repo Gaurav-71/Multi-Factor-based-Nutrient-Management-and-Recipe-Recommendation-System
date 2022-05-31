@@ -2,3 +2,5 @@
 **/APIKey.txt
 **/chromedriver.exe
 **/node_modules
+**/venv
+__pycache__
