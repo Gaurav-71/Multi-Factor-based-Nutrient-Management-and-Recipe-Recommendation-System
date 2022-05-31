@@ -32,10 +32,10 @@
 
 ## Flask setup
 
-- Setup environment variable
-
-  `export FLASK_APP=main.py`
-
 - Run Command
 
   `flask run`
+
+- Setup environment variable (optional)
+
+  `export FLASK_APP=main.py`
