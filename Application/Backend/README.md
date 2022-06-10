@@ -4,7 +4,7 @@
 
 - Python Version
 
-  `3.9.4`
+  `3.10.4`
 
 - Environement Name
 
