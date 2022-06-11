@@ -62,6 +62,59 @@ def calculateDistance(nutrients, values, nutritionalRequirements):
     return distance
 
 # %%
+def getSummary(driver):
+    try:
+        textBlock = ""
+        summary = driver.find_elements_by_class_name('summary')
+        for index, elem in enumerate(summary):
+            textBlock = textBlock + elem.text.replace("<b>", "").replace('"', '')
+
+
+        return textBlock
+    except:
+        return None
+
+# %%
+def getInstructions(driver):
+    try:        
+        instructions = ""
+        instructionElement = driver.find_element_by_class_name('recipeInstructions')
+        instructionElementChild = instructionElement.find_element_by_xpath('.//ol').find_elements_by_xpath('.//li')
+        for index, elem in enumerate(instructionElementChild):
+            instructions = instructions + elem.text
+
+        return instructions
+    except:
+        return None
+
+# %%
+def getIngredientDetails(driver):
+    try:
+        ingredients = []
+        ingredientList = driver.find_elements_by_class_name('spoonacular-ingredient')
+        for index, elem in enumerate(ingredientList):
+            ingredient = {}
+            ingredient["name"] = elem.find_element_by_class_name("spoonacular-name").text
+            ingredient["quantity"] = elem.find_element_by_class_name("spoonacular-metric").text
+            ingredient["imageUrl"] = elem.find_element_by_class_name("spoonacular-image-wrapper").find_element_by_xpath(".//img").get_attribute("src")
+            ingredients.append(ingredient)
+
+        return ingredients
+    except:
+        return None
+
+# %%
+def getNutritionValues(nutrient, value):
+    try:
+        nutritionInfo = {}
+        for i in range(0, len(nutrient)): 
+            nutritionInfo[nutrient[i].text] = value[i].text
+
+        return nutritionInfo
+    except:
+        return None
+
+# %%
 def rankFoodProducts(foodProducts, nutritionalRequirements):
     options = Options()
     options.headless = True
@@ -69,12 +122,22 @@ def rankFoodProducts(foodProducts, nutritionalRequirements):
     nutrientList = {}
     distance = []
     driver = webdriver.Chrome(options=options, executable_path='./chromedriver')
-    for foodProduct in foodProducts:
+    for i in range(0, len(foodProducts)):
+        foodProduct = foodProducts[i]
+        
         url = "https://spoonacular.com/recipes/" + str(foodProduct["title"].replace(" ", "-")) + "-" + str(foodProduct["id"])
-        print(url)
         driver.get(url)
+        
+
         nutrient = driver.find_elements_by_class_name('spoonacular-nutrient-name')
         value = driver.find_elements_by_class_name('spoonacular-nutrient-value')
+        
+        foodProduct["summary"] = getSummary(driver)
+        foodProduct["instruction"] = getInstructions(driver)
+        foodProduct["ingredients"] = getIngredientDetails(driver)
+        foodProduct["nutrition"] = getNutritionValues(nutrient, value)
+        
+
         nutrients = []
         values = []
         test = []
@@ -84,13 +147,10 @@ def rankFoodProducts(foodProducts, nutritionalRequirements):
             test.append(elem.text)
             text = "".join([ c if (c.isnumeric() or c == ".") else "" for c in elem.text ])
             values.append(text.lower())
-        # for  i in range(0,len(nutrient)):
-        #     nutrientList[nutrient[i]] = value[i]
-
-        # print(nutrientList)
 
         distance.append(calculateDistance(nutrients, values, nutritionalRequirements))
-    
+        
+        foodProducts[i] = foodProduct
     driver.quit()    
     
     distance = np.array(distance)
