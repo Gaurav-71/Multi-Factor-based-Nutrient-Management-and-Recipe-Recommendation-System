@@ -30,6 +30,17 @@
 
 `pip install -r requirements.txt`
 
+- Flask
+- requests
+- numpy
+- pandas
+- sklearn
+- scipy
+- matplotlib
+- selenium
+- google-api-python-client
+- openpyxl
+
 ## Flask setup
 
 - Run Command
@@ -39,3 +50,11 @@
 - Setup environment variable (optional)
 
   `export FLASK_APP=main.py`
+
+- Run development server
+
+  `FLASK_APP=main.py FLASK_ENV=development flask run`
+
+## Deta.sh Setup
+
+<https://docs.deta.sh/docs/micros/getting_started/#creating-your-first-micro>

@@ -115,13 +115,13 @@ def getNutritionValues(nutrient, value):
         return None
 
 # %%
-def rankFoodProducts(foodProducts, nutritionalRequirements):
+def rankFoodProducts(executable_path,foodProducts, nutritionalRequirements):
     options = Options()
     options.headless = True
     options.add_argument("--window-size=1920,1200")
     nutrientList = {}
     distance = []
-    driver = webdriver.Chrome(options=options, executable_path='./chromedriver')
+    driver = webdriver.Chrome(options=options, executable_path=executable_path)
     for i in range(0, len(foodProducts)):
         foodProduct = foodProducts[i]
         

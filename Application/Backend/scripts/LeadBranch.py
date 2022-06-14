@@ -4,8 +4,6 @@ import numpy as np
 import pandas as pd
 import json
 
-# %%
-#Processor Files
 import RequiredNutrients
 import IngredientsPrediction
 import APIForFoodProducts
@@ -14,21 +12,22 @@ import RankFoodProducts
 import YouTubeClient
 
 from datetime import datetime
-start=datetime.now()
 
-nutritionalRequirements = RequiredNutrients.getNutritionalRequirements()
-ingredients = list(IngredientsPrediction.getIngredients(nutritionalRequirements))
-while(len(ingredients) < 5):
+def main():
+
+    start=datetime.now()
+    nutritionalRequirements = RequiredNutrients.getNutritionalRequirements()
     ingredients = list(IngredientsPrediction.getIngredients(nutritionalRequirements))
-ingredients = ",+".join(ingredients)
-foodProducts = APIForFoodProducts.getSpoonacular(ingredients)
-foodList = ParseAPIResponse.parseAPIResponse(json.loads(foodProducts))
-rankedFoodList = RankFoodProducts.rankFoodProducts(foodList, nutritionalRequirements)
+    while(len(ingredients) < 5):
+        ingredients = list(IngredientsPrediction.getIngredients(nutritionalRequirements))
+    ingredients = ",+".join(ingredients)
+    foodProducts = APIForFoodProducts.getSpoonacular(ingredients)
+    foodList = ParseAPIResponse.parseAPIResponse(json.loads(foodProducts))
+    rankedFoodList = RankFoodProducts.rankFoodProducts(foodList, nutritionalRequirements)
 
+    YouTubeClient.getVideos(rankedFoodList)
 
-foodObjects = YouTubeClient.getVideos(rankedFoodList)
-
-print("\n\n\n Executed in ",datetime.now()-start)
+    print("\n\n\n Executed in ",datetime.now()-start)
 
 
 

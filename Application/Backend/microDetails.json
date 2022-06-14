@@ -1,0 +1,10 @@
+{
+  "name": "Backend",
+  "id": "affab88c-09b9-4f9f-bf96-c5b4b8bb17d5",
+  "project": "c09x7i2b",
+  "runtime": "python3.9",
+  "endpoint": "https://q97mx1.deta.dev",
+  "region": "ap-southeast-1",
+  "visor": "disabled",
+  "http_auth": "disabled"
+}

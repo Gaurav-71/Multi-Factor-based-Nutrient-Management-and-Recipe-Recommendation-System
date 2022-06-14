@@ -7,12 +7,6 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
 
-
-data = pd.read_csv('../Datasets/ingredients-and-nutritional-values-corrected.csv')
-ingredientNames = data['Common name']
-data.drop(['Common name'], axis = 1, inplace = True)
-
-
 #Elbow method
 
 
@@ -41,8 +35,7 @@ data.drop(['Common name'], axis = 1, inplace = True)
 # plt.show()
 
 
-def getIngredients(userNutrientInformation = [17.580000000000002, 0.00, 0.00, 8.615, 24.73, 332.0, 1.7, 1.9, 0.020999999999999998, 0.54, 0.18, 10.0, 2.0, 70.0, 3.3150000000000004, 120.0, 0.235, 8.0, 43.0, 0.125, 0.0085, 120.0, 119.0, 7.075, 1.1]):
-    global data
+def getIngredients(data,ingredientNames,userNutrientInformation = [17.580000000000002, 0.00, 0.00, 8.615, 24.73, 332.0, 1.7, 1.9, 0.020999999999999998, 0.54, 0.18, 10.0, 2.0, 70.0, 3.3150000000000004, 120.0, 0.235, 8.0, 43.0, 0.125, 0.0085, 120.0, 119.0, 7.075, 1.1]):    
     
     def getEvenClusters(X, cluster_size):
         n_clusters = int(np.ceil(len(X)/cluster_size))
