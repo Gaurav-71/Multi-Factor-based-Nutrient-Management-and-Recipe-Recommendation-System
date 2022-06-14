@@ -19,7 +19,7 @@ class WelcomeImage extends StatelessWidget {
                 child: SizedBox(
                   height: 420,
                   child: SvgPicture.asset(
-                    "assets/images/hero_3.svg",
+                    "assets/auth/hero.svg",
                     fit: BoxFit.contain,
                   ),
                 )),

@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:recipedia/components/background.dart';
+import 'package:recipedia/screens/authentication/signUp/image.dart';
+import 'package:recipedia/screens/authentication/signUp/sign_up_form.dart';
 
-class SignUp extends StatefulWidget {
+class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<SignUp> createState() => _SignUpState();
-}
-
-class _SignUpState extends State<SignUp> {
-  @override
   Widget build(BuildContext context) {
-    return const Text("Sign Up");
+    return Background(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const SignUpScreenTopImage(),
+          Row(
+            children: const [
+              Spacer(),
+              Expanded(
+                flex: 8,
+                child: SignUpForm(),
+              ),
+              Spacer(),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }

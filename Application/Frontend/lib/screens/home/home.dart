@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipedia/components/background.dart';
 import 'package:recipedia/services/auth.dart';
 
 class Home extends StatelessWidget {
@@ -6,12 +7,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const MyHomePage(title: 'Firebase Auth Demo'),
+      home: MyHomePage(title: 'Firebase Auth Demo'),
     );
   }
 }
@@ -26,56 +24,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   final AuthService _authService = AuthService();
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.logout_outlined,
-            ),
-            tooltip: 'Sign Out',
-            onPressed: () async {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(const SnackBar(content: Text('Signing Out')));
-              await _authService.signOut();
-            },
-          ),
-        ],
+    return Background(
+      child: Center(
+        child: ElevatedButton.icon(
+          icon: const Icon(Icons.logout),
+          onPressed: () async {
+            await _authService.signOut();
+          },
+          label: const Text("Logout"),
+        ), // This trailing comma makes auto-formatting nicer for build methods.
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You are logged in !\n',
-            ),
-            const Text(
-              'You have pushed the button this many times:\n',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

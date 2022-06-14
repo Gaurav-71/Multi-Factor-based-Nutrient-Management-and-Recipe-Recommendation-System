@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:recipedia/constants.dart';
 
 class Loading extends StatelessWidget {
-  const Loading({Key? key}) : super(key: key);
+  final String message;
+  const Loading({Key? key, required this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.grey[50],
-        child: const Center(
-          child: SpinKitPouringHourGlass(
-            color: Colors.blue,
-            size: 50.0,
+    return Column(
+      children: [
+        const Center(
+          child: SpinKitSpinningLines(
+            color: kPrimaryColor,
+            size: 60.0,
           ),
-        ));
+        ),
+        const SizedBox(
+          height: 25,
+        ),
+        Text(message)
+      ],
+    );
   }
 }

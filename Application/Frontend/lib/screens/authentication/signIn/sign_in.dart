@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:recipedia/components/background.dart';
+import 'package:recipedia/screens/authentication/signIn/image.dart';
+import 'package:recipedia/screens/authentication/signIn/sign_in_form.dart';
 
-class SignIn extends StatefulWidget {
+class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
 
   @override
-  State<SignIn> createState() => _SignInState();
-}
-
-class _SignInState extends State<SignIn> {
-  @override
   Widget build(BuildContext context) {
-    return const Text("Sign In Screen");
+    return Background(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const LoginScreenTopImage(),
+          Row(
+            children: const [
+              Spacer(),
+              Expanded(
+                flex: 8,
+                child: LoginForm(),
+              ),
+              Spacer(),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
