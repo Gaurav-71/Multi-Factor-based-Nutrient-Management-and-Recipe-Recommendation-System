@@ -18,13 +18,24 @@ class NutritionTab extends StatefulWidget {
 class _NutritionTabState extends State<NutritionTab> {
   late List<List<dynamic>> userData;
   List<PlatformFile>? _paths;
-  final String? _extension = "csv";
+  final String _extension = "csv";
   final FileType _pickingType = FileType.custom;
+
+  ScrollController _scrollController = ScrollController();
+  double _scrollPosition = 0.0;
+
+  _scrollListener() {
+    setState(() {
+      _scrollPosition = _scrollController.position.pixels;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     userData = List<List<dynamic>>.empty(growable: true);
+    _scrollController = ScrollController();
+    _scrollController.addListener(_scrollListener);
   }
 
   @override
@@ -67,42 +78,98 @@ class _NutritionTabState extends State<NutritionTab> {
             ],
           ),
           const SizedBox(
-            height: defaultPadding * 2,
+            height: defaultPadding,
           ),
           const Divider(),
           Expanded(
               child: userData.isNotEmpty
                   ? ListView.builder(
+                      controller: _scrollController,
                       itemCount: userData.length,
                       itemBuilder: (context, index) {
                         return Card(
+                          margin: const EdgeInsets.only(
+                              left: defaultPadding,
+                              right: defaultPadding,
+                              top: 12.0),
+                          color: Colors.grey[200],
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            child: Row(
                               children: [
-                                Text(userData[index][0]),
-                                Text(userData[index][1]),
-                                Text(userData[index][2]),
+                                const SizedBox(
+                                  width: 10.0,
+                                ),
+                                Image.asset(
+                                  "assets/nutrition/${userData[index][2].toString()}.png",
+                                  height: 35,
+                                ),
+                                const SizedBox(
+                                  width: 20.0,
+                                ),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      userData[index][0].toString(),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(userData[index][1].toString()),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
                         );
                       })
-                  : Text("No data provided")),
+                  : const Text("No data provided")),
+          const SizedBox(
+            height: 15,
+          ),
+          const Divider(),
+          userData.isNotEmpty
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _scrollPosition < 1600.0
+                        ? const Text(
+                            "Scroll down to view more parameters",
+                          )
+                        : const Icon(
+                            Icons.keyboard_double_arrow_up_outlined,
+                            color: kPrimaryColor,
+                          ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    _scrollPosition < 1600.0
+                        ? const Icon(
+                            Icons.keyboard_double_arrow_down_outlined,
+                            color: kPrimaryColor,
+                          )
+                        : const Text("Scroll up to view more parameters"),
+                  ],
+                )
+              : const Text(""),
+          const SizedBox(
+            height: 15,
+          )
         ]);
   }
 
   openFile(filepath) async {
-    File f = new File(filepath);
-    print("CSV to List");
+    File f = File(filepath);
     final input = f.openRead();
     final fields = await input
         .transform(utf8.decoder)
-        .transform(new CsvToListConverter())
+        .transform(const CsvToListConverter())
         .toList();
-    print(fields);
     setState(() {
       userData = fields;
     });
@@ -113,22 +180,19 @@ class _NutritionTabState extends State<NutritionTab> {
       _paths = (await FilePicker.platform.pickFiles(
         type: _pickingType,
         allowMultiple: false,
-        allowedExtensions: (_extension?.isNotEmpty ?? false)
-            ? _extension?.replaceAll(' ', '').split(',')
+        allowedExtensions: (_extension.isNotEmpty)
+            ? _extension.replaceAll(' ', '').split(',')
             : null,
       ))
           ?.files;
     } on PlatformException catch (e) {
-      print("Unsupported operation" + e.toString());
+      print("Unsupported operation ${e.toString()}");
     } catch (ex) {
       print(ex);
     }
     if (!mounted) return;
     setState(() {
       openFile(_paths![0].path);
-      print(_paths);
-      print("File path ${_paths![0]}");
-      print(_paths!.first.extension);
     });
   }
 }
