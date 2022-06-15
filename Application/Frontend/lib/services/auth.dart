@@ -8,6 +8,11 @@ class AuthService {
     return _auth.authStateChanges().map((User? user) => user);
   }
 
+  currentUser() {
+    User? user = _auth.currentUser;
+    return user;
+  }
+
   Future signUpWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
