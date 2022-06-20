@@ -1,14 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class DatabseService {
-  final String uid;
-  DatabseService({required this.uid});
+class DatabaseService {
   // collection reference
-  final CollectionReference nutritionDataCollection =
-      FirebaseFirestore.instance.collection("NutritionData");
 
-  Stream<QuerySnapshot> get nutritionData {
-    return nutritionDataCollection.snapshots();
+  final db = FirebaseFirestore.instance;
+
+  Stream<DocumentSnapshot<Map<String, dynamic>>> downloadData(uid) {
+    return db.collection("NutritionData").doc(uid).snapshots();
+    // collection.snapshots().listen(
+    //       (event) => {print("current data: ${event.data()}")},
+    //       onError: (error) => print("Listen failed: $error"),
+    //     );
+  }
+
+  uploadData(uid, data) {
+    db.collection("NutritionData").doc(uid).set(data);
   }
 
   // Future getData() async {
@@ -27,4 +33,5 @@ class DatabseService {
   //     },
   //   );
   // }
+
 }

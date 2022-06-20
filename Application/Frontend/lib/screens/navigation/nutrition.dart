@@ -101,7 +101,7 @@ class _NutritionTabState extends State<NutritionTab> {
                                   width: 10.0,
                                 ),
                                 Image.asset(
-                                  "assets/nutrition/${userData[index][2].toString()}.png",
+                                  "assets/nutritiondata/${userData[index][0].toString()}.png",
                                   height: 35,
                                 ),
                                 const SizedBox(
