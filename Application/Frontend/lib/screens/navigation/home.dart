@@ -10,7 +10,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:recipedia/constants.dart';
-import 'package:recipedia/model/user_data.dart';
 import 'package:recipedia/services/database.dart';
 
 class HomeTab extends StatefulWidget {
