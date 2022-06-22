@@ -78,7 +78,7 @@ class _NutritionTabState extends State<NutritionTab> {
                     Expanded(
                       flex: 100,
                       child: SizedBox(
-                          height: 200,
+                          height: 150,
                           child: SvgPicture.asset("assets/images/upload.svg")),
                     ),
                     const Spacer(),
@@ -161,7 +161,7 @@ class _NutritionTabState extends State<NutritionTab> {
                   height: 15,
                 ),
                 const Divider(),
-                userData.isNotEmpty
+                snapshotDataAsList.isNotEmpty
                     ? Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

@@ -9,8 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:recipedia/components/loading.dart';
+import 'package:recipedia/components/recipe/recipe_screen.dart';
 import 'package:recipedia/constants.dart';
+import 'package:recipedia/models/api_response.dart';
 import 'package:recipedia/services/database.dart';
+import 'package:http/http.dart' as http;
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -28,11 +32,15 @@ class _HomeTabState extends State<HomeTab> {
 
   final DatabaseService _databaseService = DatabaseService();
 
+  late Future<List<ApiResponse>> apiResponse;
+  bool loadingApiResponse = false;
+
   @override
   void initState() {
     super.initState();
     userData = List<List<dynamic>>.empty(growable: true);
     userUid = "";
+    apiResponse = fetchApiResponse();
   }
 
   @override
@@ -55,12 +63,31 @@ class _HomeTabState extends State<HomeTab> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text("Loading");
+          return const Loading(message: "Fetching user Data");
         }
 
         if (snapshot.data?.data() != null) {
-          var temp = snapshot.data?.data();
-          return Text(temp!['uid'].toString());
+          return !loadingApiResponse
+              ? FutureBuilder<List<ApiResponse>>(
+                  future: apiResponse,
+                  builder: (context, apiSnapshot) {
+                    if (apiSnapshot.hasData) {
+                      return RecipeScreen(recipes: apiSnapshot.data);
+                    } else if (apiSnapshot.hasError) {
+                      return Text('${snapshot.error}');
+                    } else {
+                      return const Text("Error");
+                    }
+                  })
+              : Column(children: const [
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Center(
+                    child: Loading(
+                        message: "Loading recipes tailor made for you !"),
+                  )
+                ]);
         } else {
           return Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -151,5 +178,23 @@ class _HomeTabState extends State<HomeTab> {
     setState(() {
       openFile(_paths![0].path);
     });
+  }
+
+  Future<List<ApiResponse>> fetchApiResponse() async {
+    setState(() {
+      loadingApiResponse = true;
+    });
+    final response = await http.get(Uri.parse('http://127.0.0.1:5000'));
+    if (response.statusCode == 200) {
+      List<ApiResponse> myModels = (json.decode(response.body) as List)
+          .map((i) => ApiResponse.fromJson(i))
+          .toList();
+      setState(() {
+        loadingApiResponse = false;
+      });
+      return myModels;
+    } else {
+      throw Exception('Failed to load Api Response');
+    }
   }
 }

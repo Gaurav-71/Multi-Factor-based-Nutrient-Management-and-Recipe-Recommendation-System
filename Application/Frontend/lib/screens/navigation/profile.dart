@@ -16,7 +16,6 @@ class _ProfileTabState extends State<ProfileTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 30),
         Row(
           children: [
             const Spacer(),
