@@ -181,6 +181,7 @@ class _HomeTabState extends State<HomeTab> {
   }
 
   Future<List<ApiResponse>> fetchApiResponse() async {
+    print("api called");
     setState(() {
       loadingApiResponse = true;
     });

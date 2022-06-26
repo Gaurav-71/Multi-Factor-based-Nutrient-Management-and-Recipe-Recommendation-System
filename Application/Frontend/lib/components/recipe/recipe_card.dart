@@ -14,87 +14,95 @@ class RecipeCard extends StatefulWidget {
 class _RecipeCardState extends State<RecipeCard> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => VideoScreen(recipe: widget.recipe)),
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: DecoratedBox(
-          decoration: const BoxDecoration(
-              color: Color.fromARGB(96, 239, 182, 182),
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-          child: Column(
-            children: [
-              Image.network(
-                getImageUrl(widget.recipe.videoUrl.toString()),
-                height: 210.0,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 12),
-                child: Row(
+    return widget.recipe.videoUrl != null
+        ? GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => VideoScreen(recipe: widget.recipe)),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DecoratedBox(
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(96, 239, 182, 182),
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: Column(
                   children: [
-                    SizedBox(
-                      width: 350,
-                      child: buildTextSubTitleVariation2(
-                          widget.recipe.title.toString()),
-                    )
+                    Image.network(
+                      getImageUrl(widget.recipe.videoUrl.toString()),
+                      height: 210.0,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, right: 10, top: 12),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 350,
+                            child: buildTextSubTitleVariation2(
+                                widget.recipe.title.toString()),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, right: 10, top: 4),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 350,
+                            child: buildTextSubTitleVariation3(
+                                widget.recipe.summary.toString()),
+                          )
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, top: 4),
+                      child: Divider(),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 10, right: 10, top: 4),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            NutritionStat(
+                                img: "assets/home/calories.png",
+                                value: widget.recipe.nutrition!.calories
+                                    .toString()),
+                            NutritionStat(
+                                img: "assets/home/fat.png",
+                                value: widget.recipe.nutrition!.fat.toString()),
+                            NutritionStat(
+                                img: "assets/home/sugar.png",
+                                value:
+                                    widget.recipe.nutrition!.sugar.toString()),
+                            NutritionStat(
+                                img: "assets/home/carbs.png",
+                                value: widget.recipe.nutrition!.carbohydrates
+                                    .toString()),
+                            NutritionStat(
+                                img: "assets/home/protein.png",
+                                value:
+                                    widget.recipe.nutrition!.protein.toString())
+                          ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 4),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 350,
-                      child: buildTextSubTitleVariation3(
-                          widget.recipe.summary.toString()),
-                    )
-                  ],
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 4),
-                child: Divider(),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 4),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NutritionStat(
-                          img: "assets/home/calories.png",
-                          value: widget.recipe.nutrition!.calories.toString()),
-                      NutritionStat(
-                          img: "assets/home/fat.png",
-                          value: widget.recipe.nutrition!.fat.toString()),
-                      NutritionStat(
-                          img: "assets/home/sugar.png",
-                          value: widget.recipe.nutrition!.sugar.toString()),
-                      NutritionStat(
-                          img: "assets/home/carbs.png",
-                          value: widget.recipe.nutrition!.carbohydrates
-                              .toString()),
-                      NutritionStat(
-                          img: "assets/home/protein.png",
-                          value: widget.recipe.nutrition!.protein.toString())
-                    ]),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          )
+        : const Text("");
   }
 
   buildTextSubTitleVariation2(String text) {
