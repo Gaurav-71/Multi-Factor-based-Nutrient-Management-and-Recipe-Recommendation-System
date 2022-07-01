@@ -51,4 +51,4 @@ def mockData():
 
 @app.route('/', methods=["GET"])
 def home():
-    return actualData()
+    return mockData()
