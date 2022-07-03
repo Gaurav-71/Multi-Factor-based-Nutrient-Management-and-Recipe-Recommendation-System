@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:recipedia/screens/navigation/navigation.dart';
 
 class Home extends StatelessWidget {
@@ -10,7 +11,9 @@ class Home extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Recipedia"),
+          toolbarHeight: 90,
+          title: SizedBox(
+              height: 70, child: SvgPicture.asset("assets/logo-white.svg")),
         ),
         body: const NavScreen());
   }

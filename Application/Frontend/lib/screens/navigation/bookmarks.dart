@@ -10,8 +10,12 @@ class Bookmarks extends StatefulWidget {
 class _BookmarksState extends State<Bookmarks> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("Bookmarks")),
+    return Scaffold(
+      body: Column(
+        children: const [
+          Text("Bookmarks"),
+        ],
+      ),
     );
   }
 }

@@ -1,0 +1,769 @@
+// high fat
+
+inputOrder = [AGERANGE PROTEIN	ASH	FAT	DIETARY-FIBRE	CARBOHYDRATE	ENERGY	THIAMINE	RIBOFLAVIN	NIACIN	PANTAC	VITAMIN B6	VITAMIN B7	VITAMIN B9	VITAMIN C	ALUMINIUM	CALCIUM	COPPER	IRON	MAGNESIUM	MANGANESE	NICKEL	PHOSPHOR	POTASSIUM	SODIUM	ZINC]
+
+input = ["19-24",23.98,2.995,10.38,8.675,24.69,250,1.3,1.5,0.017,0.94,0.185,10,2,50,1.545,120,0.075,12,27,0.105,0.0005,120,289,5.235,1.5]), gender = 'male']
+
+ingredients = [
+0        Agathi leaves
+21       Bathua leaves
+36             Brinjal
+162             Mullet
+175             Orange
+180    Pak Choi leaves
+217            Pummelo
+243             Sadaya
+266         Strawberry
+]
+
+[
+  {
+    "id": 655019,
+    "title": "Patriotic Strawberries",
+    "imageUrl": "https://spoonacular.com/recipeImages/655019-312x231.jpg",
+    "ingedients": "shortening, white chocolate chips, strawberries",
+    "summary": "Patriotic Strawberries might be just the hor d'oeuvre you are searching for. This recipe serves 24 and costs 17 cents per serving. One serving contains 88 calories, 1g of protein, and 5g of fat. If you have strawberries, shortening, chocolate chips, and a few other ingredients on hand, you can make it. 1 person has made this recipe and would make it again. From preparation to the plate, this recipe takes roughly 45 minutes. It is a good option if you're following a gluten free and dairy free diet. All things considered, we decided this recipe deserves a spoonacular score of 7%. This score is very bad (but still fixable). Try La Madeleine Strawberries Romanov \u2013 strawberries served with a wonderful brandy sauce, Patriotic Apple Pie, and Patriotic Dessert for similar recipes.",
+    "instruction": "Melt white chocolate according to package directions. You may need to add about 1 teaspoon of shortening to every 1 cup of white chocolate.When fully melted, dip berries into chocolate, about 1/2 way up.Then dip into blue sugar or blue sprinkles.Let dry.",
+    "ingredients": [
+      {
+        "name": "shortening",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/shortening.jpg"
+      },
+      {
+        "name": "strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      },
+      {
+        "name": "blue sugar",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/sugar-in-bowl.png"
+      },
+      {
+        "name": "white chocolate chips",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/white-chocolate-chips.jpg"
+      }
+    ],
+    "nutrition": {
+      "Calories": "87k",
+      "Fat": "5g",
+      "  Saturated Fat": "2g",
+      "Carbohydrates": "10g",
+      "  Sugar": "9g",
+      "Cholesterol": "2mg",
+      "Sodium": "12mg",
+      "Protein": "0.91g",
+      "Vitamin C": "7mg",
+      "Calcium": "30mg",
+      "Phosphorus": "27mg",
+      "Vitamin B2": "0.04mg",
+      "Manganese": "0.05mg",
+      "Vitamin K": "1\u00b5g",
+      "Potassium": "58mg",
+      "Vitamin B12": "0.08\u00b5g",
+      "Vitamin E": "0.2mg",
+      "Fiber": "0.27g",
+      "Vitamin B5": "0.1mg"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=UCFgeNa-RNs"
+  },
+  {
+    "id": 716424,
+    "title": "Strawberry Basil Sorbet (no Ice Cream Maker Necessary!)",
+    "imageUrl": "https://spoonacular.com/recipeImages/716424-312x231.jpg",
+    "ingedients": "basil leaves, honey, strawberries",
+    "summary": "One serving contains 169 calories, 0g of protein, and 5g of fat. For 77 cents per serving, this recipe covers 2% of your daily requirements of vitamins and minerals. This recipe is liked by 101 foodies and cooks. Head to the store and pick up basil leaves, strawberries, honey, and a few other things to make it today. It is perfect for Mother's Day. It is a good option if you're following a gluten free, dairy free, and vegetarian diet. From preparation to the plate, this recipe takes around 45 minutes. All things considered, we decided this recipe deserves a spoonacular score of 26%. This score is not so excellent. Try Strawberry Sorbet (without an ice cream maker) #12Bloggers, Coconut Mango-Pineapple Sorbet + Ice Cream Maker Giveaway, and Strawberry Basil Sorbet Bellini for similar recipes.",
+    "instruction": null,
+    "ingredients": [
+      {
+        "name": "basil leaves",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/fresh-basil.jpg"
+      },
+      {
+        "name": "basil oil",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/basil-oil.jpg"
+      },
+      {
+        "name": "honey",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/honey.png"
+      },
+      {
+        "name": "strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "169k",
+      "Fat": "4g",
+      "  Saturated Fat": "0.62g",
+      "Carbohydrates": "34g",
+      "  Sugar": "34g",
+      "Cholesterol": "0.0mg",
+      "Sodium": "2mg",
+      "Protein": "0.32g",
+      "Vitamin K": "27\u00b5g",
+      "Vitamin A": "316IU",
+      "Manganese": "0.11mg",
+      "Vitamin E": "0.7mg",
+      "Vitamin C": "1mg",
+      "Iron": "0.4mg",
+      "Copper": "0.04mg",
+      "Calcium": "13mg",
+      "Folate": "5\u00b5g",
+      "Vitamin B2": "0.02mg",
+      "Magnesium": "4mg",
+      "Potassium": "41mg"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=7FCmNrtrMvY"
+  },
+  {
+    "id": 715574,
+    "title": "Homemade Strawberry Shake",
+    "imageUrl": "https://spoonacular.com/recipeImages/715574-312x231.jpg",
+    "ingedients": "vanilla ice cream, whole milk, strawberries",
+    "summary": "Homemade Strawberry Shake might be just the beverage you are searching for. For 47 cents per serving, this recipe covers 6% of your daily requirements of vitamins and minerals. Watching your figure? This gluten free recipe has 170 calories, 5g of protein, and 9g of fat per serving. Head to the store and pick up strawberries, vanillan ice cream, milk, and a few other things to make it today. 30 people were impressed by this recipe. It can be enjoyed any time, but it is especially good for Mother's Day. From preparation to the plate, this recipe takes around 45 minutes. All things considered, we decided this recipe deserves a spoonacular score of 48%. This score is solid. Try Strawberry Milkshake - Strawberry Short-Shake, Homemade Shamrock Shake, and Healthy Homemade Shamrock Shake for similar recipes.",
+    "instruction": null,
+    "ingredients": [
+      {
+        "name": "strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      },
+      {
+        "name": "vanilla ice cream",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/vanilla-ice-cream.png"
+      },
+      {
+        "name": "whole milk",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/milk.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "177k",
+      "Fat": "8g",
+      "  Saturated Fat": "5g",
+      "Carbohydrates": "20g",
+      "  Sugar": "17g",
+      "Cholesterol": "32mg",
+      "Sodium": "79mg",
+      "Protein": "4g",
+      "Vitamin C": "26mg",
+      "Calcium": "169mg",
+      "Vitamin B2": "0.28mg",
+      "Phosphorus": "136mg",
+      "Vitamin B12": "0.58\u00b5g",
+      "Manganese": "0.18mg",
+      "Potassium": "285mg",
+      "Vitamin D": "1\u00b5g",
+      "Vitamin A": "368IU",
+      "Vitamin B5": "0.68mg",
+      "Selenium": "4\u00b5g",
+      "Magnesium": "21mg",
+      "Fiber": "1g",
+      "Zinc": "0.74mg",
+      "Vitamin B1": "0.07mg",
+      "Folate": "17\u00b5g",
+      "Vitamin B6": "0.08mg",
+      "Copper": "0.05mg",
+      "Vitamin E": "0.35mg",
+      "Vitamin B3": "0.31mg",
+      "Iron": "0.26mg",
+      "Vitamin K": "1\u00b5g"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=3FfggVpDAVU"
+  },
+  {
+    "id": 665823,
+    "title": "Melt Your Heart",
+    "imageUrl": "https://spoonacular.com/recipeImages/665823-312x231.jpg",
+    "ingedients": "plain yogurt, blueberries, strawberries",
+    "summary": "If you have around about 45 minutes to spend in the kitchen, [valentine's Dessert] Melt Your Heart might be a tremendous gluten free, lacto ovo vegetarian, and primal recipe to try. For $1.27 per serving, this recipe covers 7% of your daily requirements of vitamins and minerals. One portion of this dish contains roughly 4g of protein, 4g of fat, and a total of 102 calories. This recipe serves 2. 1 person were impressed by this recipe. It is brought to you by Foodista. Head to the store and pick up plain/flavour yogurt, handful of blueberries, strawberries, and a few other things to make it today. Taking all factors into account, this recipe earns a spoonacular score of 55%, which is solid. Try Melt Your Heart Tuna Melt, Heart to Heart: Lemon Coeur a la Creme with Blood Orange Compote, and Heart-of-My-Heart Chocolate Cupcakes for similar recipes.",
+    "instruction": null,
+    "ingredients": [
+      {
+        "name": "plain yogurt",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/plain-yogurt.jpg"
+      },
+      {
+        "name": "fresh blueberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/blueberries.jpg"
+      },
+      {
+        "name": "strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "101k",
+      "Fat": "3g",
+      "  Saturated Fat": "2g",
+      "Carbohydrates": "14g",
+      "  Sugar": "11g",
+      "Cholesterol": "13mg",
+      "Sodium": "46mg",
+      "Protein": "4g",
+      "Vitamin C": "39mg",
+      "Manganese": "0.36mg",
+      "Calcium": "132mg",
+      "Phosphorus": "113mg",
+      "Vitamin B2": "0.17mg",
+      "Fiber": "2g",
+      "Vitamin K": "8\u00b5g",
+      "Potassium": "275mg",
+      "Vitamin B12": "0.37\u00b5g",
+      "Folate": "23\u00b5g",
+      "Magnesium": "22mg",
+      "Vitamin B5": "0.51mg",
+      "Zinc": "0.73mg",
+      "Vitamin B6": "0.08mg",
+      "Vitamin B1": "0.06mg",
+      "Selenium": "2\u00b5g",
+      "Vitamin E": "0.45mg",
+      "Copper": "0.06mg",
+      "Vitamin A": "126IU",
+      "Vitamin B3": "0.46mg",
+      "Iron": "0.4mg"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=6F_pr_J3vgE"
+  },
+  {
+    "id": 654515,
+    "title": "Pandan Smoothie",
+    "imageUrl": "https://spoonacular.com/recipeImages/654515-312x231.jpg",
+    "ingedients": "diet soda, cucumber, honey, bay leaves, oranges",
+    "summary": "You can never have too many morn meal recipes, so give Pandan Smoothie a try. One serving contains 292 calories, 2g of protein, and 0g of fat. For $1.44 per serving, this recipe covers 10% of your daily requirements of vitamins and minerals. Head to the store and pick up pandan leaves click here cut to 2 length, oranges, water, and a few other things to make it today. Not a lot of people made this recipe, and 1 would say it hit the spot. It is a good option if you're following a gluten free, dairy free, and vegetarian diet. From preparation to the plate, this recipe takes approximately 45 minutes. All things considered, we decided this recipe deserves a spoonacular score of 45%. This score is solid. Try Pandan Agar Agar (Pandan Jelly), Pandan Egg Puffs, and Pandan Chiffon Cake for similar recipes.",
+    "instruction": "Blend pandan leaves and water together, strain.Blend oranges, cucumber, honey and soda, then add in the pandan water again and mix well.Pour \"Smoothie\" into a jug and leave to chill in the fridge before serving.",
+    "ingredients": [
+      {
+        "name": "bay leaves",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/bay-leaves.jpg"
+      },
+      {
+        "name": "diet soda",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/soda-can.jpg"
+      },
+      {
+        "name": "cucumber",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/cucumber.jpg"
+      },
+      {
+        "name": "honey",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/honey.png"
+      },
+      {
+        "name": "oranges",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/orange.png"
+      },
+      {
+        "name": "water",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/water.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "291k",
+      "Fat": "0.34g",
+      "  Saturated Fat": "0.04g",
+      "Carbohydrates": "76g",
+      "  Sugar": "70g",
+      "Cholesterol": "0.0mg",
+      "Sodium": "7mg",
+      "Protein": "2g",
+      "Vitamin C": "106mg",
+      "Fiber": "5g",
+      "Folate": "67\u00b5g",
+      "Potassium": "464mg",
+      "Vitamin B1": "0.19mg",
+      "Vitamin A": "493IU",
+      "Calcium": "94mg",
+      "Vitamin B2": "0.14mg",
+      "Vitamin B6": "0.16mg",
+      "Manganese": "0.16mg",
+      "Copper": "0.15mg",
+      "Magnesium": "27mg",
+      "Vitamin B5": "0.65mg",
+      "Phosphorus": "50mg",
+      "Iron": "0.7mg",
+      "Vitamin K": "3\u00b5g",
+      "Vitamin B3": "0.65mg",
+      "Zinc": "0.38mg",
+      "Vitamin E": "0.37mg",
+      "Selenium": "1\u00b5g"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=ncf9njh5Zkk"
+  },
+  {
+    "id": 644020,
+    "title": "Fruit Salsa & Cinnamon Chips",
+    "imageUrl": "https://spoonacular.com/recipeImages/644020-312x231.jpg",
+    "ingedients": "cinnamon, flour tortillas, green apples, jelly, kiwis, lemon juice, mango, orange, strawberries",
+    "summary": "Need a vegan hor d'oeuvre? Fruit Salsa & Cinnamon Chips could be a spectacular recipe to try. For $2.24 per serving, this recipe covers 14% of your daily requirements of vitamins and minerals. This recipe makes 5 servings with 342 calories, 2g of protein, and 1g of fat each. A mixture of kiwis, water, jelly, and a handful of other ingredients are all it takes to make this recipe so yummy. 1 person has made this recipe and would make it again. From preparation to the plate, this recipe takes around 45 minutes. This recipe is typical of Mexican cuisine. All things considered, we decided this recipe deserves a spoonacular score of 57%. This score is good. Try Fruit Salsa with Cinnamon Chips, Fruit Salsa with Cinnamon Chips, and Tangy Fruit Salsa with Cinnamon Chips for similar recipes.",
+    "instruction": "Peel and chop green apples.In large bowl, toss green apples with lemon juice.Chop strawberries, mango, and kiwis, adding to apple mixture as prepared.Grate approximately 2 tablespoons of orange zest from orange and add to mixture.Cut orange in half and squeeze juice over mixture.In small bowl, mix jelly and brown sugar.Combine jelly mixture with fruit.Chill fruit while preparing cinnamon chips.Combine granulated sugar and cinnamon.Fill a clean spray bottle with water.Spray water on each tortilla, then sprinkle with cinnamon and sugar mixture.Cut each tortilla into eighths.Bake tortilla chips in 400 degree oven for six minutes.Cool chips on rack.Serve chips with fruit salsa.",
+    "ingredients": [
+      {
+        "name": "brown sugar",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/dark-brown-sugar.png"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg"
+      },
+      {
+        "name": "flour tortillas",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/flour-tortilla.jpg"
+      },
+      {
+        "name": "granulated sugar",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/sugar-in-bowl.png"
+      },
+      {
+        "name": "green apples",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/grannysmith-apple.png"
+      },
+      {
+        "name": "jelly",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberry-jam.png"
+      },
+      {
+        "name": "kiwis",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/kiwi.png"
+      },
+      {
+        "name": "lemon juice",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/lemon-juice.jpg"
+      },
+      {
+        "name": "mango",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/mango.jpg"
+      },
+      {
+        "name": "orange",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/orange.png"
+      },
+      {
+        "name": "trimmed strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      },
+      {
+        "name": "water",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/water.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "347k",
+      "Fat": "1g",
+      "  Saturated Fat": "0.13g",
+      "Carbohydrates": "88g",
+      "  Sugar": "67g",
+      "Cholesterol": "0.0mg",
+      "Sodium": "30mg",
+      "Protein": "2g",
+      "Vitamin C": "135mg",
+      "Vitamin K": "42\u00b5g",
+      "Fiber": "9g",
+      "Manganese": "0.4mg",
+      "Potassium": "660mg",
+      "Folate": "62\u00b5g",
+      "Copper": "0.31mg",
+      "Vitamin E": "2mg",
+      "Vitamin A": "688IU",
+      "Vitamin B6": "0.22mg",
+      "Magnesium": "38mg",
+      "Calcium": "85mg",
+      "Vitamin B2": "0.13mg",
+      "Phosphorus": "71mg",
+      "Vitamin B1": "0.1mg",
+      "Iron": "0.94mg",
+      "Vitamin B5": "0.47mg",
+      "Vitamin B3": "0.92mg",
+      "Zinc": "0.34mg",
+      "Selenium": "1\u00b5g"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=4JMO5PGeSvg"
+  },
+  {
+    "id": 633830,
+    "title": "Baked Swedish Pancake",
+    "imageUrl": "https://spoonacular.com/recipeImages/633830-312x231.jpg",
+    "ingedients": "butter, eggs, jam, maple syrup, milk, orange, strawberries",
+    "summary": "Baked Swedish Pancake might be just the morn meal you are searching for. One serving contains 525 calories, 15g of protein, and 15g of fat. This vegetarian recipe serves 4 and costs $2.74 per serving. Only a few people made this recipe, and 3 would say it hit the spot. From preparation to the plate, this recipe takes approximately 45 minutes. If you have butter, jam, flour, and a few other ingredients on hand, you can make it. This recipe is typical of Scandinavian cuisine. All things considered, we decided this recipe deserves a spoonacular score of 61%. This score is solid. Similar recipes include Swedish Baked Potatoes (Hasselbackspotatis), Very Berry Baked Pancake, and Baked Apple Pancake.",
+    "instruction": "Heat oven to 400 degrees and place butter in 9 x 13 inch casserole to melt. Mix other ingredients into a batter and pour into hot pan. Bake 20 minutes. It will puff up and edges will curl in and brown when done. Cut in squares and serve with a variety of toppings. Makes 10 slices per pan. Serves 6 to 8.",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/butter-sliced.jpg"
+      },
+      {
+        "name": "eggs",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/egg.png"
+      },
+      {
+        "name": "flour",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/flour.png"
+      },
+      {
+        "name": "jam",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberry-jam.png"
+      },
+      {
+        "name": "maple syrup",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/maple-syrup.png"
+      },
+      {
+        "name": "milk",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/milk.png"
+      },
+      {
+        "name": "orange",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/orange.png"
+      },
+      {
+        "name": "powdered sugar",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/powdered-sugar.jpg"
+      },
+      {
+        "name": "salt",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/salt.jpg"
+      },
+      {
+        "name": "fresh strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "525k",
+      "Fat": "14g",
+      "  Saturated Fat": "6g",
+      "Carbohydrates": "84g",
+      "  Sugar": "48g",
+      "Cholesterol": "266mg",
+      "Sodium": "190mg",
+      "Protein": "15g",
+      "Vitamin C": "134mg",
+      "Manganese": "1mg",
+      "Vitamin B2": "0.9mg",
+      "Selenium": "34\u00b5g",
+      "Folate": "155\u00b5g",
+      "Vitamin B1": "0.43mg",
+      "Phosphorus": "268mg",
+      "Fiber": "6g",
+      "Calcium": "197mg",
+      "Iron": "3mg",
+      "Potassium": "650mg",
+      "Vitamin B5": "1mg",
+      "Vitamin A": "852IU",
+      "Vitamin D": "2\u00b5g",
+      "Vitamin B12": "0.87\u00b5g",
+      "Vitamin B3": "2mg",
+      "Vitamin B6": "0.27mg",
+      "Magnesium": "53mg",
+      "Copper": "0.24mg",
+      "Zinc": "1mg",
+      "Vitamin E": "1mg",
+      "Vitamin K": "4\u00b5g"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=kyxEFj7bgHI"
+  },
+  {
+    "id": 661741,
+    "title": "Strawberry and Chocolate Chip Panini",
+    "imageUrl": "https://spoonacular.com/recipeImages/661741-312x231.jpg",
+    "ingedients": "chocolate chips, sourdough bread, strawberries",
+    "summary": "Strawberry and Chocolate Chip Panini requires around roughly 45 minutes from start to finish. This main course has 766 calories, 18g of protein, and 27g of fat per serving. This dairy free recipe serves 1 and costs $3.04 per serving. 3 people have tried and liked this recipe. It will be a hit at your Mother's Day event. It is brought to you by Foodista. Head to the store and pick up strawberries, chocolate chips, sourdough bread, and a few other things to make it today. All things considered, we decided this recipe deserves a spoonacular score of 65%. This score is solid. Chocolate-Chocolate Chip Cookie and Strawberry Gelato Sandwiches, Chocolate-Dipped Strawberry Chocolate Chip Cookies, and Strawberry Chocolate Chip Cookies are very similar to this recipe.",
+    "instruction": null,
+    "ingredients": [
+      {
+        "name": "strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      },
+      {
+        "name": "chocolate chips",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/chocolate-chips.jpg"
+      },
+      {
+        "name": "sourdough bread",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/sourdough-bread.jpg"
+      },
+      {
+        "name": "olive oil",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/olive-oil.jpg"
+      }
+    ],
+    "nutrition": {
+      "Calories": "765k",
+      "Fat": "27g",
+      "  Saturated Fat": "9g",
+      "Carbohydrates": "114g",
+      "  Sugar": "38g",
+      "Cholesterol": "6mg",
+      "Sodium": "688mg",
+      "Protein": "18g",
+      "Vitamin C": "85mg",
+      "Manganese": "1mg",
+      "Folate": "224\u00b5g",
+      "Selenium": "35\u00b5g",
+      "Vitamin B1": "0.59mg",
+      "Vitamin B3": "6mg",
+      "Iron": "5mg",
+      "Fiber": "7g",
+      "Vitamin B2": "0.4mg",
+      "Phosphorus": "180mg",
+      "Vitamin E": "2mg",
+      "Magnesium": "54mg",
+      "Calcium": "131mg",
+      "Copper": "0.24mg",
+      "Vitamin K": "12\u00b5g",
+      "Potassium": "384mg",
+      "Vitamin B6": "0.2mg",
+      "Zinc": "1mg",
+      "Vitamin B5": "0.61mg",
+      "Vitamin A": "118IU"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=dsOZJhvbff0"
+  },
+  {
+    "id": 659062,
+    "title": "Salmon Cold Noodle Bowl",
+    "imageUrl": "https://spoonacular.com/recipeImages/659062-312x231.jpg",
+    "ingedients": "avocado, black sesame seeds, boston lettuce, cashews, chili paste, garlic cloves, green onions, honey, lime juice, low sodium soy sauce, peanut butter, pickled ginger, salmon filets, spaghetti, orange, strawberries",
+    "summary": "Salmon Cold Noodle Bowl might be just the main course you are searching for. This recipe makes 2 servings with 1068 calories, 57g of protein, and 50g of fat each. For $7.75 per serving, this recipe covers 62% of your daily requirements of vitamins and minerals. From preparation to the plate, this recipe takes approximately 45 minutes. 1 person has made this recipe and would make it again. It is a good option if you're following a dairy free and pescatarian diet. A mixture of pickled ginger - as as possible, garlic cloves, boston lettuce, and a handful of other ingredients are all it takes to make this recipe so tasty. To use up the cashews you could follow this main course with the Baked Apples with Cranberries and Cashews as a dessert. All things considered, we decided this recipe deserves a spoonacular score of 92%. This score is tremendous. Similar recipes include Cold Marinated Sirloin Noodle Bowl, Miso-Glazed Salmon Cold Noodle Salad, and Honey-Lime Sriracha Salmon with Cold Sesame Cucumber Noodle Salad.Salmon on the menu? Try pairing with Chardonnay, Pinot Noir, and Sauvignon Blanc. To decide on white or red, you should consider your seasoning and sauces. Chardonnay is a great friend to buttery, creamy dishes, while sauvignon blanc can complement herb or citrus-centric dishes. A light-bodied, low-tannin red such as the pinot noir goes great with broiled or grilled salmon. The A to Z Chardonnay with a 4.2 out of 5 star rating seems like a good match. It costs about 15 dollars per bottle.\nA to Z Chardonnay\nThe 2010 A to Z Chardonnay opens with aromas of white flowers, tangerine, lime, quince, wet stone and minerals that develop further into nutmeg, honey, green apple with hints of ginger. A mineral laden attack is bright, mouthwatering and intense. The nuanced mid-palate carries on with flavors that mirror and amplify the aromatics. The finish is long, clean, crisp and juicy with flavors of honeysuckle, citrus and wet stone. This wine exemplifies classic Oregon steely Chardonnay. 2010 was an exceptional vintage for white wines in Oregon and this sophisticated terroir driven wine is no exception; bright, tangy and intense it will deliver over the next 5 years.\n\n\u00bb Get this wine on Wine.com",
+    "instruction": "Begin the peanut sauce. Add lime juice, pickled ginger, water, soy sauce, peanut butter, honey, chili paste, garlic, and sesame oil to a small pot. Cook on medium high heat stirring with whisk until mixture is warmed. Remove from heat. Set aside.Bake salmon fillets at 350 until done.In a large salad bowl, place chopped lettuce, cooked chilled noodles, fruits and veggies and top with salmon filet and chopped cashews and black sesame seeds if desired. Serve with peanut sauce.",
+    "ingredients": [
+      {
+        "name": "avocado",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/avocado.jpg"
+      },
+      {
+        "name": "black sesame seeds",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/black-sesame-seeds-or-chia-seeds.png"
+      },
+      {
+        "name": "boston lettuce",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/Butter-or-Boston-Bibb-lettuce.jpg"
+      },
+      {
+        "name": "cashews",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/cashews.jpg"
+      },
+      {
+        "name": "chili paste",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/chili-paste.png"
+      },
+      {
+        "name": "garlic cloves",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/garlic.png"
+      },
+      {
+        "name": "diced green onions",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/spring-onions.jpg"
+      },
+      {
+        "name": "honey",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/honey.png"
+      },
+      {
+        "name": "fresh lime juice",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/lime-juice.png"
+      },
+      {
+        "name": "low sodium soy sauce",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/soy-sauce.jpg"
+      },
+      {
+        "name": "orange",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/orange.png"
+      },
+      {
+        "name": "peanut butter",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/peanut-butter.png"
+      },
+      {
+        "name": "diced pickled ginger",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/ginger-pickled.jpg"
+      },
+      {
+        "name": "salmon filets",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/salmon.png"
+      },
+      {
+        "name": "sesame oil",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/sesame-oil.png"
+      },
+      {
+        "name": "cooked whole spaghetti",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/spaghetti.jpg"
+      },
+      {
+        "name": "strawberries",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
+      },
+      {
+        "name": "water",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/water.png"
+      }
+    ],
+    "nutrition": {
+      "Calories": "1067k",
+      "Fat": "49g",
+      "  Saturated Fat": "8g",
+      "Carbohydrates": "109g",
+      "  Sugar": "41g",
+      "Cholesterol": "93mg",
+      "Sodium": "1009mg",
+      "Protein": "56g",
+      "Selenium": "106\u00b5g",
+      "Vitamin K": "135\u00b5g",
+      "Vitamin B6": "2mg",
+      "Vitamin C": "89mg",
+      "Vitamin B3": "21mg",
+      "Manganese": "1mg",
+      "Vitamin B12": "5\u00b5g",
+      "Copper": "1mg",
+      "Phosphorus": "788mg",
+      "Folate": "269\u00b5g",
+      "Potassium": "2285mg",
+      "Vitamin A": "3222IU",
+      "Fiber": "15g",
+      "Magnesium": "244mg",
+      "Vitamin B2": "1mg",
+      "Vitamin B5": "5mg",
+      "Vitamin B1": "0.78mg",
+      "Iron": "7mg",
+      "Vitamin E": "5mg",
+      "Zinc": "5mg",
+      "Calcium": "226mg"
+    },
+    "videoUrl": "https://www.youtube.com/watch?v=6JfU4860cyI"
+  },
+  {
+    "id": 659192,
+    "title": "Salt-Crusted Snapper With Blood Orange and Bay",
+    "imageUrl": "https://spoonacular.com/recipeImages/659192-312x231.jpg",
+    "ingedients": "snapper, egg whites, blood orange, bay leaves",
+    "summary": "If you have approximately approximately 45 minutes to spend in the kitchen, Salt-Crusted Snapper With Blood Orange and Bay might be an amazing gluten free, dairy free, paleolithic, and primal recipe to try. This main course has 558 calories, 101g of protein, and 13g of fat per serving. This recipe serves 2 and costs $14.47 per serving. 1 person has made this recipe and would make it again. It is brought to you by Foodista. Head to the store and pick up a snapper, olive oil, blood orange, and a few other things to make it today. With a spoonacular score of 84%, this dish is super. If you like this recipe, take a look at these similar recipes: Salt Crusted Whole Fish With Blood Oranges, Sea Salt-Crusted Pink Snapper with Ice Wine Nage, and Pistachio-Crusted Halibut with Blood Orange Sauce.Pinot Grigio, Gruener Veltliner, and Pinot Noir are great choices for Snapper. Fish is as diverse as wine, so it's hard to pick wines that go with every fish. A crisp white wine, such as a pinot grigio or Gr\u00fcner Veltliner, will suit any delicately flavored white fish. Meaty, strongly flavored fish such as salmon and tuna can even handle a light red wine, such as a pinot noir. The Anne Amie Pinot Gris with a 4.5 out of 5 star rating seems like a good match. It costs about 14 dollars per bottle.\nAnne Amie Pinot Gris\nAromas of meyer lemon, mandarin, linden flower, orange blossom. Flavor of stone fruit, crisp apples, Asian pear, cardamom. The finish has dry, long, minerality.SUGGESTED FOOD PAIRINGS: roast chicken, mussels, cheeses, grilled squash.\n\n\u00bb Get this wine on Wine.com",
+    "instruction": null,
+    "ingredients": [
+      {
+        "name": "red whole snapper",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/red-snapper.jpg"
+      },
+      {
+        "name": "olive oil",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/olive-oil.jpg"
+      },
+      {
+        "name": "coarse sea salt",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/salt.jpg"
+      },
+      {
+        "name": "egg whites",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/egg-white.jpg"
+      },
+      {
+        "name": "blood orange",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/blood-orange.jpg"
+      },
+      {
+        "name": "bay leaves",
+        "quantity": "",
+        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/bay-leaves.jpg"
+      }
+    ],
+    "nutrition": {
+      "Calories": "558k",
+      "Fat": "13g",
+      "  Saturated Fat": "2g",
+      "Carbohydrates": "1g",
+      "  Sugar": "1g",
+      "Cholesterol": "167mg",
+      "Sodium": "615726mg",
+      "Protein": "101g",
+      "Vitamin D": "46\u00b5g",
+      "Selenium": "189\u00b5g",
+      "Vitamin B12": "13\u00b5g",
+      "Vitamin B6": "1mg",
+      "Phosphorus": "910mg",
+      "Manganese": "1mg",
+      "Potassium": "2153mg",
+      "Calcium": "536mg",
+      "Magnesium": "170mg",
+      "Vitamin E": "5mg",
+      "Vitamin B5": "3mg",
+      "Iron": "6mg",
+      "Copper": "0.62mg",
+      "Zinc": "3mg",
+      "Vitamin B2": "0.35mg",
+      "Vitamin B1": "0.22mg",
+      "Vitamin C": "10mg",
+      "Vitamin A": "510IU",
+      "Folate": "28\u00b5g",
+      "Vitamin B3": "1mg",
+      "Vitamin K": "4\u00b5g"
+    }
+  }
+]

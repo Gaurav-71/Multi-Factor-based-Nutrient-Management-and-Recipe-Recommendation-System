@@ -1,75 +1,11 @@
 [
   {
-    "id": 661834,
-    "title": "Strawberry Mango Green Tea Limeade",
-    "imageUrl": "https://spoonacular.com/recipeImages/661834-312x231.jpg",
-    "ingedients": "lime juice, green tea, simple syrup, strawberries, mango",
-    "summary": "You can never have too many beverage recipes, so give Strawberry Mango Green Tea Limeade a try. One serving contains 74 calories, 1g of protein, and 0g of fat. This gluten free, dairy free, lacto ovo vegetarian, and vegan recipe serves 6 and costs $12.79 per serving. It is brought to you by Foodista. A mixture of strawberries, simple syrup, lime juice, and a handful of other ingredients are all it takes to make this recipe so delicious. 3 people were glad they tried this recipe. From preparation to the plate, this recipe takes roughly roughly 45 minutes. It can be enjoyed any time, but it is especially good for Mother's Day. Overall, this recipe earns a rather bad spoonacular score of 31%. Similar recipes include Jasmine Green Iced Tea Limeade, Mango-Green Tea Smoothies, and Mango Green Tea Pops.",
-    "instruction": null,
-    "ingredients": [
-      {
-        "name": "strawberries",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/strawberries.png"
-      },
-      {
-        "name": "mango",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/mango.jpg"
-      },
-      {
-        "name": "lime juice",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/lime-juice.png"
-      },
-      {
-        "name": "green tea",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/green-tea-leaves.jpg"
-      },
-      {
-        "name": "simple syrup",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/simple-syrup.jpg"
-      }
-    ],
-    "nutrition": {
-      "Calories": "73k",
-      "Fat": "0.2g",
-      "  Saturated Fat": "0.04g",
-      "Carbohydrates": "20g",
-      "  Sugar": "15g",
-      "Cholesterol": "0.0mg",
-      "Sodium": "14mg",
-      "Caffeine": "31mg",
-      "Protein": "0.56g",
-      "Vitamin C": "36mg",
-      "Manganese": "0.46mg",
-      "Folate": "29\u00b5g",
-      "Vitamin A": "320IU",
-      "Potassium": "197mg",
-      "Fiber": "1g",
-      "Iron": "0.72mg",
-      "Magnesium": "15mg",
-      "Copper": "0.07mg",
-      "Vitamin B2": "0.05mg",
-      "Vitamin B6": "0.06mg",
-      "Vitamin B1": "0.04mg",
-      "Vitamin E": "0.41mg",
-      "Vitamin K": "1\u00b5g",
-      "Phosphorus": "17mg",
-      "Vitamin B3": "0.35mg",
-      "Vitamin B5": "0.15mg",
-      "Calcium": "14mg"
-    }
-  },
-  {
     "id": 644045,
     "title": "Fruity Yogurt Parfait",
     "imageUrl": "https://spoonacular.com/recipeImages/644045-312x231.jpg",
     "ingedients": "plain yogurt, orange juice, kiwi, mango, strawberries",
     "summary": "Fruity Yogurt Parfait might be just the breakfast you are searching for. This recipe serves 3 and costs 91 cents per serving. One serving contains 92 calories, 4g of protein, and 3g of fat. 1 person has tried and liked this recipe. It is brought to you by Foodista. Head to the store and pick up yogurt, mango, strawberries, and a few other things to make it today. It is a good option if you're following a gluten free, lacto ovo vegetarian, and primal diet. From preparation to the plate, this recipe takes around around 45 minutes. Overall, this recipe earns a solid spoonacular score of 53%. If you like this recipe, you might also like recipes such as Fruit And Yogurt Parfait Recipe (grapes And Granola Parfait), Fruity Pebble Parfait, and amaranth yogurt parfait \u2013 popped amaranth parfait with fruits.",
-    "instruction": null,
+    "instruction": "n/a",
     "ingredients": [
       {
         "name": "plain yogurt",
@@ -100,9 +36,9 @@
     "nutrition": {
       "Calories": "96k",
       "Fat": "3g",
-      "  Saturated Fat": "1g",
+      "Saturated Fat": "1g",
       "Carbohydrates": "15g",
-      "  Sugar": "12g",
+      "Sugar": "12g",
       "Cholesterol": "10mg",
       "Sodium": "39mg",
       "Protein": "3g",
@@ -127,8 +63,7 @@
       "Selenium": "2\u00b5g",
       "Vitamin B3": "0.48mg",
       "Iron": "0.27mg"
-    },
-    "videoUrl": "https://www.youtube.com/watch?v=Aehh0rZ-C_M"
+    }
   },
   {
     "id": 639600,
@@ -177,9 +112,9 @@
     "nutrition": {
       "Calories": "78k",
       "Fat": "0.4g",
-      "  Saturated Fat": "0.07g",
+      "Saturated Fat": "0.07g",
       "Carbohydrates": "20g",
-      "  Sugar": "13g",
+      "Sugar": "13g",
       "Cholesterol": "0.0mg",
       "Sodium": "1mg",
       "Protein": "1g",
@@ -247,9 +182,9 @@
     "nutrition": {
       "Calories": "291k",
       "Fat": "0.34g",
-      "  Saturated Fat": "0.04g",
+      "Saturated Fat": "0.04g",
       "Carbohydrates": "76g",
-      "  Sugar": "70g",
+      "Sugar": "70g",
       "Cholesterol": "0.0mg",
       "Sodium": "7mg",
       "Protein": "2g",
@@ -348,9 +283,9 @@
     "nutrition": {
       "Calories": "347k",
       "Fat": "1g",
-      "  Saturated Fat": "0.13g",
+      "Saturated Fat": "0.13g",
       "Carbohydrates": "88g",
-      "  Sugar": "67g",
+      "Sugar": "67g",
       "Cholesterol": "0.0mg",
       "Sodium": "30mg",
       "Protein": "2g",
@@ -414,9 +349,9 @@
     "nutrition": {
       "Calories": "135k",
       "Fat": "0.83g",
-      "  Saturated Fat": "0.16g",
+      "Saturated Fat": "0.16g",
       "Carbohydrates": "33g",
-      "  Sugar": "28g",
+      "Sugar": "28g",
       "Cholesterol": "0.0mg",
       "Sodium": "7mg",
       "Protein": "1g",
@@ -505,9 +440,9 @@
     "nutrition": {
       "Calories": "312k",
       "Fat": "13g",
-      "  Saturated Fat": "7g",
+      "Saturated Fat": "7g",
       "Carbohydrates": "47g",
-      "  Sugar": "25g",
+      "Sugar": "25g",
       "Cholesterol": "30mg",
       "Sodium": "14mg",
       "Protein": "4g",
@@ -597,9 +532,9 @@
     "nutrition": {
       "Calories": "525k",
       "Fat": "14g",
-      "  Saturated Fat": "6g",
+      "Saturated Fat": "6g",
       "Carbohydrates": "84g",
-      "  Sugar": "48g",
+      "Sugar": "48g",
       "Cholesterol": "266mg",
       "Sodium": "190mg",
       "Protein": "15g",
@@ -634,7 +569,7 @@
     "imageUrl": "https://spoonacular.com/recipeImages/638125-312x231.jpg",
     "ingedients": "onion, celery, garlic cloves, thyme, lemon juice, whole chicken, bay leaves",
     "summary": "If you want to add more gluten free, dairy free, paleolithic, and primal recipes to your collection, Chicken In A Pot might be a recipe you should try. For $2.13 per serving, this recipe covers 23% of your daily requirements of vitamins and minerals. This recipe makes 4 servings with 596 calories, 47g of protein, and 41g of fat each. 1 person were glad they tried this recipe. If you have chicken, kosher salt, celery, and a few other ingredients on hand, you can make it. It is brought to you by Foodista. From preparation to the plate, this recipe takes about about 45 minutes. Taking all factors into account, this recipe earns a spoonacular score of 48%, which is solid. Similar recipes are One Pot Teriyaki Rice with Chicken & Vegetables + Video (+Instant Pot), Creamy Chicken and Mushroom One-Pot with Pot Pie Toppers, and Crock Pot Freezer Packs: One Pot Chicken Dinner.",
-    "instruction": null,
+    "instruction": "n/a",
     "ingredients": [
       {
         "name": "whole chicken",
@@ -690,9 +625,9 @@
     "nutrition": {
       "Calories": "595k",
       "Fat": "40g",
-      "  Saturated Fat": "11g",
+      "Saturated Fat": "11g",
       "Carbohydrates": "8g",
-      "  Sugar": "3g",
+      "Sugar": "3g",
       "Cholesterol": "183mg",
       "Sodium": "1362mg",
       "Protein": "46g",
@@ -720,76 +655,5 @@
       "Vitamin D": "0.49\u00b5g"
     },
     "videoUrl": "https://www.youtube.com/watch?v=-CKvt1KNU74"
-  },
-  {
-    "id": 659192,
-    "title": "Salt-Crusted Snapper With Blood Orange and Bay",
-    "imageUrl": "https://spoonacular.com/recipeImages/659192-312x231.jpg",
-    "ingedients": "snapper, egg whites, blood orange, bay leaves",
-    "summary": "If you have approximately approximately 45 minutes to spend in the kitchen, Salt-Crusted Snapper With Blood Orange and Bay might be an amazing gluten free, dairy free, paleolithic, and primal recipe to try. This main course has 558 calories, 101g of protein, and 13g of fat per serving. This recipe serves 2 and costs $14.47 per serving. 1 person has made this recipe and would make it again. It is brought to you by Foodista. Head to the store and pick up a snapper, olive oil, blood orange, and a few other things to make it today. With a spoonacular score of 84%, this dish is super. If you like this recipe, take a look at these similar recipes: Salt Crusted Whole Fish With Blood Oranges, Sea Salt-Crusted Pink Snapper with Ice Wine Nage, and Pistachio-Crusted Halibut with Blood Orange Sauce.Snapper works really well with Pinot Grigio, Gruener Veltliner, and Pinot Noir. Fish is as diverse as wine, so it's hard to pick wines that go with every fish. A crisp white wine, such as a pinot grigio or Gr\u00fcner Veltliner, will suit any delicately flavored white fish. Meaty, strongly flavored fish such as salmon and tuna can even handle a light red wine, such as a pinot noir. The Anne Amie Pinot Gris with a 4.5 out of 5 star rating seems like a good match. It costs about 14 dollars per bottle.\nAnne Amie Pinot Gris\nAromas of meyer lemon, mandarin, linden flower, orange blossom. Flavor of stone fruit, crisp apples, Asian pear, cardamom. The finish has dry, long, minerality.SUGGESTED FOOD PAIRINGS: roast chicken, mussels, cheeses, grilled squash.\n\n\u00bb Get this wine on Wine.com",
-    "instruction": null,
-    "ingredients": [
-      {
-        "name": "red whole snapper",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/red-snapper.jpg"
-      },
-      {
-        "name": "olive oil",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/olive-oil.jpg"
-      },
-      {
-        "name": "coarse sea salt",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/salt.jpg"
-      },
-      {
-        "name": "egg whites",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/egg-white.jpg"
-      },
-      {
-        "name": "blood orange",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/blood-orange.jpg"
-      },
-      {
-        "name": "bay leaves",
-        "quantity": "",
-        "imageUrl": "https://spoonacular.com/cdn/ingredients_100x100/bay-leaves.jpg"
-      }
-    ],
-    "nutrition": {
-      "Calories": "558k",
-      "Fat": "13g",
-      "  Saturated Fat": "2g",
-      "Carbohydrates": "1g",
-      "  Sugar": "1g",
-      "Cholesterol": "167mg",
-      "Sodium": "615726mg",
-      "Protein": "101g",
-      "Vitamin D": "46\u00b5g",
-      "Selenium": "189\u00b5g",
-      "Vitamin B12": "13\u00b5g",
-      "Vitamin B6": "1mg",
-      "Phosphorus": "910mg",
-      "Manganese": "1mg",
-      "Potassium": "2153mg",
-      "Calcium": "536mg",
-      "Magnesium": "170mg",
-      "Vitamin E": "5mg",
-      "Vitamin B5": "3mg",
-      "Iron": "6mg",
-      "Copper": "0.62mg",
-      "Zinc": "3mg",
-      "Vitamin B2": "0.35mg",
-      "Vitamin B1": "0.22mg",
-      "Vitamin C": "10mg",
-      "Vitamin A": "510IU",
-      "Folate": "28\u00b5g",
-      "Vitamin B3": "1mg",
-      "Vitamin K": "4\u00b5g"
-    }
   }
 ]
