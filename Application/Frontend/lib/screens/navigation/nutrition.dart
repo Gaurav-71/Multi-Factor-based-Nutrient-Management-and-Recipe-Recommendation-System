@@ -28,6 +28,8 @@ class _NutritionTabState extends State<NutritionTab> {
 
   final DatabaseService _databaseService = DatabaseService();
 
+  List<dynamic> skipIngredients = [];
+
   ScrollController _scrollController = ScrollController();
   double _scrollPosition = 0.0;
 
@@ -112,49 +114,61 @@ class _NutritionTabState extends State<NutritionTab> {
                             controller: _scrollController,
                             itemCount: snapshotDataAsList.length,
                             itemBuilder: (context, index) {
-                              return Card(
-                                margin: const EdgeInsets.only(
-                                    left: defaultPadding,
-                                    right: defaultPadding,
-                                    top: 12.0),
-                                color: Colors.grey[200],
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: [
-                                      const SizedBox(
-                                        width: 10.0,
+                              if (snapshotDataAsList[index][0].toString() ==
+                                  'skipIngredients') {
+                                skipIngredients = [];
+                                skipIngredients
+                                    .addAll(snapshotDataAsList[index][1]);
+                              }
+                              return snapshotDataAsList[index][0].toString() !=
+                                      'skipIngredients'
+                                  ? Card(
+                                      margin: const EdgeInsets.only(
+                                          left: defaultPadding,
+                                          right: defaultPadding,
+                                          top: 12.0),
+                                      color: Colors.grey[200],
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: [
+                                            const SizedBox(
+                                              width: 10.0,
+                                            ),
+                                            Image.asset(
+                                              "assets/nutritiondata/${snapshotDataAsList[index][0].toString()}.png",
+                                              height: 35,
+                                            ),
+                                            const SizedBox(
+                                              width: 20.0,
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  snapshotDataAsList[index][0]
+                                                      .toString(),
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(snapshotDataAsList[index]
+                                                        [1]
+                                                    .toString()),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      Image.asset(
-                                        "assets/nutritiondata/${snapshotDataAsList[index][0].toString()}.png",
-                                        height: 35,
-                                      ),
-                                      const SizedBox(
-                                        width: 20.0,
-                                      ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            snapshotDataAsList[index][0]
-                                                .toString(),
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          const SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(snapshotDataAsList[index][1]
-                                              .toString()),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              );
+                                    )
+                                  : const Text("");
                             })
                         : const Text("No data provided")),
                 const SizedBox(
@@ -203,7 +217,8 @@ class _NutritionTabState extends State<NutritionTab> {
       userData = fields;
     });
     userData.add(["uid", userUid]);
-    createMap();
+    userData.add(["skipIngredients", skipIngredients]);
+    print(skipIngredients);
     _databaseService.uploadData(userUid, createMap());
   }
 
@@ -211,7 +226,11 @@ class _NutritionTabState extends State<NutritionTab> {
     var map = <String, dynamic>{};
     for (var i = 0; i < userData.length; i++) {
       var temp = userData[i];
-      map[temp[0].toString()] = temp[1].toString();
+      if (temp[0].toString() == 'skipIngredients') {
+        map[temp[0].toString()] = temp[1];
+      } else {
+        map[temp[0].toString()] = temp[1].toString();
+      }
     }
     return map;
   }
