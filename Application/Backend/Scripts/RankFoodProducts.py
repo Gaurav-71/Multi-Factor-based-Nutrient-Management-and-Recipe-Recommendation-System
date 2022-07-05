@@ -107,15 +107,15 @@ def getIngredientDetails(driver):
 def getNutritionValues(nutrient, value):
     try:
         nutritionInfo = {}
-        for i in range(0, len(nutrient)): 
-            nutritionInfo[nutrient[i].text] = value[i].text
+        for i in range(0, len(nutrient)):             
+            nutritionInfo[nutrient[i].text.strip()] = value[i].text
 
         return nutritionInfo
     except:
         return None
 
 # %%
-def rankFoodProducts(executable_path,foodProducts, nutritionalRequirements):
+def rankFoodProducts(executable_path, foodProducts, nutritionalRequirements):
     options = Options()
     options.headless = True
     options.add_argument("--window-size=1920,1200")
@@ -159,5 +159,33 @@ def rankFoodProducts(executable_path,foodProducts, nutritionalRequirements):
     sortedFoodProducts = list(foodProducts[inds])
     
     return sortedFoodProducts
+
+# %%
+def getFoodProductsForNutrition(executable_path,foodProducts):
+    options = Options()
+    options.headless = True
+    options.add_argument("--window-size=1920,1200")
+    nutrientList = {}
+    distance = []
+    driver = webdriver.Chrome(options=options, executable_path=executable_path)
+    for i in range(0, len(foodProducts)):
+        foodProduct = foodProducts[i]
+        
+        url = "https://spoonacular.com/recipes/" + str(foodProduct["title"].replace(" ", "-")) + "-" + str(foodProduct["id"])
+        driver.get(url)
+        
+
+        nutrient = driver.find_elements_by_class_name('spoonacular-nutrient-name')
+        value = driver.find_elements_by_class_name('spoonacular-nutrient-value')
+        
+        foodProduct["summary"] = getSummary(driver)
+        foodProduct["instruction"] = getInstructions(driver)
+        foodProduct["ingredients"] = getIngredientDetails(driver)
+        foodProduct["nutrition"] = getNutritionValues(nutrient, value)
+        
+        foodProducts[i] = foodProduct
+    driver.quit()    
+    
+    return list(foodProducts)
 
 

@@ -1,7 +1,8 @@
+# %%
 import numpy as np
 import pandas as pd
 
-
+# %%
 def parseAPIResponse(response):
     foodProducts = []
     for food in response:
@@ -21,6 +22,19 @@ def parseAPIResponse(response):
         
         foodProducts.append(obj)
     
+    return foodProducts
+
+# %%
+def parseAPIResponseForNutrient(response):
+    foodProducts = []
+    for food in response:
+        obj = {}
+        ingredientList = []
+        obj["id"] = food["id"]
+        obj["title"] = food["title"]
+        obj["imageUrl"] = food["image"]
+        foodProducts.append(obj)
+
     return foodProducts
 
 

@@ -20,11 +20,6 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/mock-personalised-recipes', methods=["GET"])
-def mockData():
-    with open("./sampleResponse.json") as json_file:        
-        return json.dumps(json.load(json_file))
-
 @app.route('/personalised-recipes', methods=["GET"])
 def personalisedRecipes():
     start=datetime.now()
@@ -46,14 +41,78 @@ def personalisedRecipes():
     foodProducts = Scripts.APIForFoodProducts.getSpoonacular(ingredients)
     print("5.Completed foodProducts in : ", datetime.now() - start)
     foodList = Scripts.ParseAPIResponse.parseAPIResponse(json.loads(foodProducts))
-    print("6.Completed foodList in : ", datetime.now() - start)
+    print("6.Completed foodList in : ", datetime.now() - start, foodList)
     rankedFoodList = Scripts.RankFoodProducts.rankFoodProducts("./Scripts/chromedriver",foodList, nutritionalRequirements)
-    print("7.Completed rankedFoodList in : ", datetime.now() - start)
+    print("7.Completed rankedFoodList in : ", datetime.now() - start, rankedFoodList)
     apiResult = Scripts.YouTubeClient.getVideos(api_key_file,rankedFoodList)
     print("8.Completed apiResult in : ", datetime.now() - start)
     print("\n\n\n Executed api call in ",datetime.now()-start)
     print(apiResult)
     return apiResult
+
+@app.route('/protein-recipes', methods=["GET"])
+def proteinRecipes():
+    start=datetime.now()
+    print("1. Started fetching protein recipes")
+    api_key_file = open("./Scripts/APIKey.txt", "r")
+    foodProducts = Scripts.APIForFoodProducts.getSpoonacularForProtein()
+    print("2. Completed fetching foodProducts in : ", datetime.now() - start)    
+    foodList = Scripts.ParseAPIResponse.parseAPIResponseForNutrient(json.loads(foodProducts))
+    print("3. Completed fetching foodList in : ", datetime.now() - start)
+    rankedFoodList = Scripts.RankFoodProducts.getFoodProductsForNutrition("./Scripts/chromedriver",foodList)
+    print("4. Completed ranking foodList in : ", datetime.now() - start)
+    apiResult = Scripts.YouTubeClient.getVideos(api_key_file,rankedFoodList)
+    print("5. Completed fetching videos from YouTube in : ", datetime.now() - start)
+    print("\n\n\n Executed api call in : ",datetime.now()-start)
+    return apiResult
+
+@app.route('/carbohydrates-recipes', methods=["GET"])
+def carbohydratesRecipes():
+    start=datetime.now()
+    print("1. Started fetching carbohydrates recipes")
+    api_key_file = open("./Scripts/APIKey.txt", "r")
+    foodProducts = Scripts.APIForFoodProducts.getSpoonacularForCarbs()
+    print("2. Completed fetching foodProducts in : ", datetime.now() - start)    
+    foodList = Scripts.ParseAPIResponse.parseAPIResponseForNutrient(json.loads(foodProducts))
+    print("3. Completed fetching foodList in : ", datetime.now() - start)
+    rankedFoodList = Scripts.RankFoodProducts.getFoodProductsForNutrition("./Scripts/chromedriver",foodList)
+    print("4. Completed ranking foodList in : ", datetime.now() - start)
+    apiResult = Scripts.YouTubeClient.getVideos(api_key_file,rankedFoodList)
+    print("5. Completed fetching videos from YouTube in : ", datetime.now() - start)
+    print("\n\n\n Executed api call in : ",datetime.now()-start)
+    return apiResult
+
+@app.route('/calories-recipes', methods=["GET"])
+def caloriesRecipes():
+    start=datetime.now()
+    print("1. Started fetching calories recipes")
+    api_key_file = open("./Scripts/APIKey.txt", "r")
+    foodProducts = Scripts.APIForFoodProducts.getSpoonacularForCalories()
+    print("2. Completed fetching foodProducts in : ", datetime.now() - start)    
+    foodList = Scripts.ParseAPIResponse.parseAPIResponseForNutrient(json.loads(foodProducts))
+    print("3. Completed fetching foodList in : ", datetime.now() - start)
+    rankedFoodList = Scripts.RankFoodProducts.getFoodProductsForNutrition("./Scripts/chromedriver",foodList)
+    print("4. Completed ranking foodList in : ", datetime.now() - start)
+    apiResult = Scripts.YouTubeClient.getVideos(api_key_file,rankedFoodList)
+    print("5. Completed fetching videos from YouTube in : ", datetime.now() - start)
+    print("\n\n\n Executed api call in : ",datetime.now()-start)
+    return apiResult  
+
+@app.route('/fat-recipes', methods=["GET"])
+def fatRecipes():
+    start=datetime.now()
+    print("1. Started fetching fat recipes")
+    api_key_file = open("./Scripts/APIKey.txt", "r")
+    foodProducts = Scripts.APIForFoodProducts.getSpoonacularForFat()
+    print("2. Completed fetching foodProducts in : ", datetime.now() - start)    
+    foodList = Scripts.ParseAPIResponse.parseAPIResponseForNutrient(json.loads(foodProducts))
+    print("3. Completed fetching foodList in : ", datetime.now() - start)
+    rankedFoodList = Scripts.RankFoodProducts.getFoodProductsForNutrition("./Scripts/chromedriver",foodList)
+    print("4. Completed ranking foodList in : ", datetime.now() - start)
+    apiResult = Scripts.YouTubeClient.getVideos(api_key_file,rankedFoodList)
+    print("5. Completed fetching videos from YouTube in : ", datetime.now() - start)
+    print("\n\n\n Executed api call in : ",datetime.now()-start)
+    return apiResult       
 
 @app.route('/all-ingredients', methods=["GET"])
 def allIngredients():
@@ -373,3 +432,29 @@ def nonVegIngredients():
     ];
     return str(nonveg)
 
+# Mockdata API Endpoints
+
+@app.route('/mock/personalised-recipes', methods=["GET"])
+def mockPersonalisedRecipes():
+    with open("./SampleResponses/personalisedRecipes.json") as json_file:        
+        return json.dumps(json.load(json_file))
+
+@app.route('/mock/protein-recipes', methods=["GET"])
+def mockProteinRecipes():
+    with open("./SampleResponses/proteinRecipes.json") as json_file:        
+        return json.dumps(json.load(json_file))
+
+@app.route('/mock/carbohydrates-recipes', methods=["GET"])
+def mockCarbohydratesRecipes():
+    with open("./SampleResponses/carbohydratesRecipes.json") as json_file:        
+        return json.dumps(json.load(json_file))
+
+@app.route('/mock/calories-recipes', methods=["GET"])
+def mockCaloriesRecipes():
+    with open("./SampleResponses/caloriesRecipes.json") as json_file:        
+        return json.dumps(json.load(json_file))  
+
+@app.route('/mock/fat-recipes', methods=["GET"])
+def mockFatRecipes():
+    with open("./SampleResponses/fatRecipes.json") as json_file:        
+        return json.dumps(json.load(json_file))    
