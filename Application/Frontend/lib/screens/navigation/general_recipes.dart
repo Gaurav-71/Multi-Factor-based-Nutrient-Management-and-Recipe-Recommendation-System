@@ -20,14 +20,14 @@ import 'package:recipedia/services/auth.dart';
 import 'package:recipedia/services/database.dart';
 import 'package:http/http.dart' as http;
 
-class HomeTab extends StatefulWidget {
-  const HomeTab({Key? key}) : super(key: key);
+class GeneralRecipes extends StatefulWidget {
+  const GeneralRecipes({Key? key}) : super(key: key);
 
   @override
-  State<HomeTab> createState() => _HomeTabState();
+  State<GeneralRecipes> createState() => _GeneralRecipesState();
 }
 
-class _HomeTabState extends State<HomeTab> {
+class _GeneralRecipesState extends State<GeneralRecipes> {
   late List<List<dynamic>> userData;
   late String? userUid;
   List<PlatformFile>? _paths;
@@ -768,8 +768,8 @@ class _HomeTabState extends State<HomeTab> {
     //   }),
     // );
 
-    final response =
-        await http.get(Uri.parse('http://127.0.0.1:5000/mock/protein-recipes'));
+    final response = await http
+        .get(Uri.parse('http://127.0.0.1:5000/mock/specific-nutrients'));
     if (response.statusCode == 200) {
       List<ApiResponse> myModels = (json.decode(response.body) as List)
           .map((i) => ApiResponse.fromJson(i))
