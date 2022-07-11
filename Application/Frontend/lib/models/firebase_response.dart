@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class FirebaseResponse {
   final String? nickel;
   final String? zinc;
@@ -5,7 +7,7 @@ class FirebaseResponse {
   final String? vitaminB6;
   final String? vitaminB7;
   final String? vitaminB9;
-  final String? skipIngredients;
+  final List<dynamic>? skipIngredients;
   final String? protein;
   final String? manganese;
   final String? magnesium;
@@ -62,35 +64,35 @@ class FirebaseResponse {
 
   factory FirebaseResponse.fromJson(Map<String, dynamic>? json) {
     return FirebaseResponse(
-      json!['Nickel'] as String?,
-      json['Zinc'] as String?,
-      json['Niacin'] as String?,
-      json['Vitamin B6'] as String?,
-      json['Vitamin B7'] as String?,
-      json['Vitamin B9'] as String?,
-      json['SkipIngredients'] as String?,
-      json['Protein'] as String?,
-      json['Manganese'] as String?,
-      json['Magnesium'] as String?,
-      json['Carbohydrates'] as String?,
-      json['Thiamine'] as String?,
-      json['Gender'] as String?,
-      json['Age Range'] as String?,
-      json['Energy'] as String?,
-      json['Fat'] as String?,
-      json['Ash'] as String?,
-      json['Pantac'] as String?,
-      json['Dietary Fibre'] as String?,
-      json['uid'] as String?,
-      json['Iron'] as String?,
-      json['Riboflavin'] as String?,
-      json['Phosphor'] as String?,
-      json['Potassium'] as String?,
-      json['Vitamin C'] as String?,
-      json['Calcium'] as String?,
-      json['Aluminium'] as String?,
-      json['Sodium'] as String?,
-      json['Copper'] as String?,
+      json?['Nickel'] as String?,
+      json?['Zinc'] as String?,
+      json?['Niacin'] as String?,
+      json?['Vitamin B6'] as String?,
+      json?['Vitamin B7'] as String?,
+      json?['Vitamin B9'] as String?,
+      json?['skipIngredients'] as List<dynamic>,
+      json?['Protein'] as String?,
+      json?['Manganese'] as String?,
+      json?['Magnesium'] as String?,
+      json?['Carbohydrates'] as String?,
+      json?['Thiamine'] as String?,
+      json?['Gender'] as String?,
+      json?['Age Range'] as String?,
+      json?['Energy'] as String?,
+      json?['Fat'] as String?,
+      json?['Ash'] as String?,
+      json?['Pantac'] as String?,
+      json?['Dietary Fibre'] as String?,
+      json?['uid'] as String?,
+      json?['Iron'] as String?,
+      json?['Riboflavin'] as String?,
+      json?['Phosphor'] as String?,
+      json?['Potassium'] as String?,
+      json?['Vitamin C'] as String?,
+      json?['Calcium'] as String?,
+      json?['Aluminium'] as String?,
+      json?['Sodium'] as String?,
+      json?['Copper'] as String?,
     );
   }
 }

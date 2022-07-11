@@ -65,7 +65,6 @@ def getIngredients(data,ingredientNames,userNutrientInformation = [17.5800000000
     ingredientRows = clusterMap[clusterMap['cluster'] == clusterNumber]['data_index']
     ingredientRows = ingredientRows[:len(ingredientRows) - 1]
     ingredients = ingredientNames.iloc[list(ingredientRows.values)]
-    print(ingredients)
     
 #     unique = np.unique(list(clusterMap['cluster']))
 #     for cluster in unique:
