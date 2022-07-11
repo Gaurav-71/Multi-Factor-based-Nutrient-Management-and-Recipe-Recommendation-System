@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:recipedia/components/error.dart';
 import 'package:recipedia/components/ingredient_card.dart';
 import 'package:recipedia/components/loading.dart';
 import 'package:recipedia/components/recipe/recipe_screen.dart';
@@ -348,13 +349,18 @@ class _HomeTabState extends State<HomeTab> {
 
   late Future<List<ApiResponse>> apiResponse;
   bool loadingApiResponse = false;
+  bool serverError = false;
 
   @override
   void initState() {
     super.initState();
     userData = List<List<dynamic>>.empty(growable: true);
     userUid = "";
-    apiResponse = fetchApiResponse();
+    try {
+      apiResponse = fetchApiResponse();
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 
   @override
@@ -381,27 +387,34 @@ class _HomeTabState extends State<HomeTab> {
         }
 
         if (snapshot.data?.data() != null) {
-          return !loadingApiResponse
-              ? FutureBuilder<List<ApiResponse>>(
-                  future: apiResponse,
-                  builder: (context, apiSnapshot) {
-                    if (apiSnapshot.hasData) {
-                      return RecipeScreen(recipes: apiSnapshot.data);
-                    } else if (apiSnapshot.hasError) {
-                      return Text('${snapshot.error}');
-                    } else {
-                      return const Text("Error");
-                    }
-                  })
-              : Column(children: const [
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Center(
-                    child: Loading(
-                        message: "Loading recipes tailor made for you !"),
-                  )
-                ]);
+          if (loadingApiResponse == true) {
+            return Column(children: const [
+              SizedBox(
+                height: 40,
+              ),
+              Center(
+                child:
+                    Loading(message: "Loading recipes tailor made for you !"),
+              )
+            ]);
+          } else if (loadingApiResponse == false && serverError == false) {
+            return FutureBuilder<List<ApiResponse>>(
+                future: apiResponse,
+                builder: (context, apiSnapshot) {
+                  if (apiSnapshot.hasData) {
+                    return RecipeScreen(recipes: apiSnapshot.data);
+                  } else if (apiSnapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  } else {
+                    return const Error(
+                        message: "Firebase error, check your network");
+                  }
+                });
+          } else {
+            return const Error(
+                message:
+                    "Server error, check the backend server and restart the application");
+          }
         } else {
           return stepCount == 0
               ? Column(
@@ -778,10 +791,16 @@ class _HomeTabState extends State<HomeTab> {
           .toList();
       setState(() {
         loadingApiResponse = false;
+        serverError = false;
       });
       return myModels;
     } else {
-      throw Exception('Failed to load Api Response');
+      setState(() {
+        loadingApiResponse = false;
+        serverError = true;
+      });
+      throw Exception(
+          'SERVER ERROR : Failed to load Personalised Api Response');
     }
   }
 }

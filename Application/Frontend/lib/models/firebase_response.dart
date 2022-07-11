@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class FirebaseResponse {
   final String? nickel;
   final String? zinc;
@@ -70,7 +68,7 @@ class FirebaseResponse {
       json?['Vitamin B6'] as String?,
       json?['Vitamin B7'] as String?,
       json?['Vitamin B9'] as String?,
-      json?['skipIngredients'] as List<dynamic>,
+      json?['skipIngredients'] as List<dynamic>?,
       json?['Protein'] as String?,
       json?['Manganese'] as String?,
       json?['Magnesium'] as String?,

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipedia/components/error.dart';
 import 'package:recipedia/components/loading.dart';
 import 'package:recipedia/components/recipe/smaller_recipe_card.dart';
 import 'package:recipedia/models/api_response.dart';
@@ -25,11 +26,16 @@ class GeneralNutrientRecipes extends StatefulWidget {
 class _GeneralNutrientRecipesState extends State<GeneralNutrientRecipes> {
   late Future<List<ApiResponse>> apiResponse;
   bool loadingApiResponse = false;
+  bool serverError = false;
 
   @override
   void initState() {
     super.initState();
-    apiResponse = fetchApiResponse();
+    try {
+      apiResponse = fetchApiResponse();
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 
   @override
@@ -58,7 +64,7 @@ class _GeneralNutrientRecipesState extends State<GeneralNutrientRecipes> {
         const SizedBox(
           height: 10,
         ),
-        !loadingApiResponse
+        !loadingApiResponse && !serverError
             ? FutureBuilder<List<ApiResponse>>(
                 future: apiResponse,
                 builder: (context, apiSnapshot) {
@@ -77,17 +83,21 @@ class _GeneralNutrientRecipesState extends State<GeneralNutrientRecipes> {
                           })),
                     );
                   } else {
-                    return const Text("Error");
+                    return const Error(message: "Error, no data found");
                   }
                 })
-            : Column(children: const [
-                SizedBox(
-                  height: 40,
-                ),
-                Center(
-                  child: Loading(message: "Loading Recipes"),
-                )
-              ]),
+            : serverError
+                ? const Error(
+                    message:
+                        "Server error, check the backend server and restart the application")
+                : Column(children: const [
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Center(
+                      child: Loading(message: "Loading Recipes"),
+                    )
+                  ]),
       ],
     );
   }
@@ -129,10 +139,16 @@ class _GeneralNutrientRecipesState extends State<GeneralNutrientRecipes> {
           .toList();
       setState(() {
         loadingApiResponse = false;
+        serverError = false;
       });
       return myModels;
     } else {
-      throw Exception('Failed to load Api Response');
+      setState(() {
+        loadingApiResponse = false;
+        serverError = true;
+      });
+      throw Exception(
+          'SERVER ERROR : Failed to load ${widget.title} Api Response');
     }
   }
 }

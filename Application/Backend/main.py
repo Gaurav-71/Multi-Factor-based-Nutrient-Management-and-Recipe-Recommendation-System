@@ -1,4 +1,4 @@
-from crypt import methods
+from unittest import skip
 from flask import Flask, render_template, request, redirect, jsonify
 
 from json import dumps
@@ -34,11 +34,11 @@ def personalisedRecipes():
     api_key_file = open("./Scripts/APIKey.txt", "r")
     nutritionalRequirements = Scripts.RequiredNutrients.getNutritionalRequirements(MEN, WOMEN, pd.Series([ request.json['Age Range'], float(request.json['Protein']), float(request.json['Ash']), float(request.json['Fat']), float(request.json['Dietary Fibre']), float(request.json['Carbohydrates']), float(request.json['Energy']), float(request.json['Thiamine']), float(request.json['Riboflavin']), float(request.json['Niacin']), float(request.json['Pantac']), float(request.json['Vitamin B6']), float(request.json['Vitamin B7']), float(request.json['Vitamin B9']), float(request.json['Vitamin C']), float(request.json['Aluminium']), float(request.json['Calcium']), float(request.json['Copper']), float(request.json['Iron']), float(request.json['Magnesium']), float(request.json['Manganese']), float(request.json['Nickel']), float(request.json['Phosphor']), float(request.json['Potassium']), float(request.json['Sodium']), float(request.json['Zinc']),]),request.json['Gender'].lower())
     print("(personalised-recipes) 2.Completed nutritionalRequirements in : ", datetime.now() - start)
-    ingredients = list(Scripts.IngredientsPrediction.getIngredients(data,ingredientNames,nutritionalRequirements))
-    print("Ingredients to be skipped : ", request.json['SkipIngredients'])
+    ingredients = list(Scripts.IngredientsPrediction.getIngredients(data,ingredientNames,nutritionalRequirements))          
     print("(personalised-recipes) 3.Completed ingredients in : ", datetime.now() - start)
     while(len(ingredients) < 5):
-        ingredients = list(Scripts.IngredientsPrediction.getIngredients(data,ingredientNames, nutritionalRequirements))
+        ingredients = list(Scripts.IngredientsPrediction.getIngredients(data,ingredientNames, nutritionalRequirements))    
+    ingredients = list(set(ingredients) - set(request.json['SkipIngredients']))    
     ingredients = ",+".join(ingredients)
     print("(personalised-recipes) 4.Completed ingredients join in : ", datetime.now() - start)
     foodProducts = Scripts.APIForFoodProducts.getSpoonacular(ingredients)
