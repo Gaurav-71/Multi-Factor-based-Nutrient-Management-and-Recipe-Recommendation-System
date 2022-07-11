@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipedia/screens/navigation/general_recipes.dart';
 import 'package:recipedia/screens/navigation/home.dart';
 import 'package:recipedia/screens/navigation/nutrition.dart';
 import 'package:recipedia/screens/navigation/profile.dart';
@@ -13,7 +14,12 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   int _selectedIndex = 0;
 
-  final _screens = [const HomeTab(), const NutritionTab(), const ProfileTab()];
+  final _screens = [
+    const HomeTab(),
+    const GeneralRecipes(),
+    const NutritionTab(),
+    const ProfileTab()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +50,13 @@ class _NavScreenState extends State<NavScreen> {
                 activeIcon: Icon(Icons.home),
                 label: 'Home'),
             BottomNavigationBarItem(
+                icon: Icon(Icons.menu_book_outlined),
+                activeIcon: Icon(Icons.menu_book),
+                label: 'Recipes'),
+            BottomNavigationBarItem(
                 icon: Icon(Icons.query_stats_outlined),
                 activeIcon: Icon(Icons.query_stats),
                 label: 'Nutrition Data'),
-            // BottomNavigationBarItem(
-            //     icon: Icon(Icons.favorite_border_outlined),
-            //     activeIcon: Icon(Icons.favorite),
-            //     label: 'Favourites'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.manage_accounts_outlined),
                 activeIcon: Icon(Icons.manage_accounts),

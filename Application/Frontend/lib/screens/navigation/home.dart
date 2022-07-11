@@ -649,9 +649,9 @@ class _HomeTabState extends State<HomeTab> {
       ))
           ?.files;
     } on PlatformException catch (e) {
-      print("Unsupported operation ${e.toString()}");
+      debugPrint("Unsupported operation ${e.toString()}");
     } catch (ex) {
-      print(ex);
+      debugPrint(ex.toString());
     }
     if (!mounted) return;
     setState(() {
@@ -718,7 +718,7 @@ class _HomeTabState extends State<HomeTab> {
   }
 
   Future<List<ApiResponse>> fetchApiResponse() async {
-    print("api called");
+    debugPrint("Personalised API called");
     setState(() {
       loadingApiResponse = true;
     });
@@ -730,46 +730,48 @@ class _HomeTabState extends State<HomeTab> {
         .get();
     FirebaseResponse firebaseResponse =
         FirebaseResponse.fromJson(userData.data());
-    // final response = await http.post(
-    //   Uri.parse('http://127.0.0.1:5000/mock/personalised-recipes'),
-    //   headers: <String, String>{
-    //     'Content-Type': 'application/json; charset=UTF-8',
-    //   },
-    //   body: jsonEncode(<String, dynamic>{
-    //     'Nickel': firebaseResponse.nickel,
-    //     'Zinc': firebaseResponse.zinc,
-    //     'Niacin': firebaseResponse.niacin,
-    //     'Vitamin B6': firebaseResponse.vitaminB6,
-    //     'Vitamin B7': firebaseResponse.vitaminB7,
-    //     'Vitamin B9': firebaseResponse.vitaminB9,
-    //     'SkipIngredients': firebaseResponse.skipIngredients,
-    //     'Protein': firebaseResponse.protein,
-    //     'Manganese': firebaseResponse.manganese,
-    //     'Magnesium': firebaseResponse.magnesium,
-    //     'Carbohydrates': firebaseResponse.carbohydrates,
-    //     'Thiamine': firebaseResponse.thiamine,
-    //     'Gender': firebaseResponse.gender,
-    //     'Age Range': firebaseResponse.ageRange,
-    //     'Energy': firebaseResponse.energy,
-    //     'Fat': firebaseResponse.fat,
-    //     'Ash': firebaseResponse.ash,
-    //     'Pantac': firebaseResponse.pantac,
-    //     'Dietary Fibre': firebaseResponse.dietaryFibre,
-    //     'uid': firebaseResponse.uid,
-    //     'Iron': firebaseResponse.iron,
-    //     'Riboflavin': firebaseResponse.riboflavin,
-    //     'Phosphor': firebaseResponse.phosphor,
-    //     'Potassium': firebaseResponse.potassium,
-    //     'Vitamin C': firebaseResponse.vitaminC,
-    //     'Calcium': firebaseResponse.calcium,
-    //     'Aluminium': firebaseResponse.aluminium,
-    //     'Sodium': firebaseResponse.sodium,
-    //     'Copper': firebaseResponse.copper,
-    //   }),
-    // );
-
-    final response =
-        await http.get(Uri.parse('http://127.0.0.1:5000/mock/protein-recipes'));
+    final dynamic response;
+    if (serverUrl.contains('mock') == true) {
+      response = await http.get(Uri.parse('$serverUrl/personalised-recipes'));
+    } else {
+      response = await http.post(
+        Uri.parse('$serverUrl/personalised-recipes'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
+          'Nickel': firebaseResponse.nickel,
+          'Zinc': firebaseResponse.zinc,
+          'Niacin': firebaseResponse.niacin,
+          'Vitamin B6': firebaseResponse.vitaminB6,
+          'Vitamin B7': firebaseResponse.vitaminB7,
+          'Vitamin B9': firebaseResponse.vitaminB9,
+          'SkipIngredients': firebaseResponse.skipIngredients,
+          'Protein': firebaseResponse.protein,
+          'Manganese': firebaseResponse.manganese,
+          'Magnesium': firebaseResponse.magnesium,
+          'Carbohydrates': firebaseResponse.carbohydrates,
+          'Thiamine': firebaseResponse.thiamine,
+          'Gender': firebaseResponse.gender,
+          'Age Range': firebaseResponse.ageRange,
+          'Energy': firebaseResponse.energy,
+          'Fat': firebaseResponse.fat,
+          'Ash': firebaseResponse.ash,
+          'Pantac': firebaseResponse.pantac,
+          'Dietary Fibre': firebaseResponse.dietaryFibre,
+          'uid': firebaseResponse.uid,
+          'Iron': firebaseResponse.iron,
+          'Riboflavin': firebaseResponse.riboflavin,
+          'Phosphor': firebaseResponse.phosphor,
+          'Potassium': firebaseResponse.potassium,
+          'Vitamin C': firebaseResponse.vitaminC,
+          'Calcium': firebaseResponse.calcium,
+          'Aluminium': firebaseResponse.aluminium,
+          'Sodium': firebaseResponse.sodium,
+          'Copper': firebaseResponse.copper,
+        }),
+      );
+    }
     if (response.statusCode == 200) {
       List<ApiResponse> myModels = (json.decode(response.body) as List)
           .map((i) => ApiResponse.fromJson(i))

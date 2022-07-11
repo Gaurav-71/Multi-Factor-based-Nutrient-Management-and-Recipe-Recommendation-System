@@ -8,38 +8,84 @@
   </head>
   <body>
     <h1>Welcome to Recipedia's Backend Server</h1>
-    <h4>Made By</h4>
+    <h3>Made By</h3>
     <ul>
       <li>1MS18CS025, Aravind Shreyas Ramesh</li>
       <li>1MS18CS040, Dheeraj Bhat</li>
       <li>1MS18CS043, Divya</li>
       <li>1MS18CS046, Gaurav V</li>
     </ul>
-    <h4>API Endpoints</h4>
+    <br />
+    <h2>API Endpoints</h2>
     <ul>
       <li>
-        <a target="_blank" href="/personalised-recipes">Personalised Recipes</a>
-        <p></p>
+        <h3>Functional API's</h3>
+        <p>
+          <b>Description : </b> Returns a list of personalised recipes based on
+          user's input and nutrient specific recipes
+        </p>
+        <ul>
+          <li>
+            <a href="{{url}}personalised-recipes"
+              >{{url}}personalised-recipes</a
+            >
+          </li>
+          <li>
+            <a href="{{url}}protein-recipes">{{url}}protein-recipes</a>
+          </li>
+          <li>
+            <a href="{{url}}carbohydrates-recipes"
+              >{{url}}carbohydrates-recipes</a
+            >
+          </li>
+          <li>
+            <a href="{{url}}fat-recipes">{{url}}fat-recipes</a>
+          </li>
+        </ul>
       </li>
+    </ul>
+    <ul>
       <li>
-        <a target="_blank" href="/mock-personalised-recipes"
-          >Mock Personalised Recipes</a
-        >
-        <p></p>
+        <h3>Mock API's</h3>
+        <p>
+          <b>Description : </b> Returns a mock list of recipes from a saved JSON
+          file
+        </p>
+        <ul>
+          <li>
+            <a href="{{url}}mock/personalised-recipes"
+              >{{url}}mock/personalised-recipes</a
+            >
+          </li>
+          <li>
+            <a href="{{url}}mock/protein-recipes"
+              >{{url}}mock/protein-recipes</a
+            >
+          </li>
+          <li>
+            <a href="{{url}}mock/carbohydrates-recipes"
+              >{{url}}mock/carbohydrates-recipes</a
+            >
+          </li>
+          <li>
+            <a href="{{url}}mock/fat-recipes">{{url}}mock/fat-recipes</a>
+          </li>
+        </ul>
       </li>
+    </ul>
+    <ul>
       <li>
-        <a target="_blank" href="/all-ingredients">All Ingredients</a>
-        <p></p>
-      </li>
-      <li>
-        <a target="_blank" href="/veg-ingredients">Only Veg Ingredients</a>
-        <p></p>
-      </li>
-      <li>
-        <a target="_blank" href="/non-veg-ingredients"
-          >Only Non-Veg Ingredients</a
-        >
-        <p></p>
+        <h3>Ingredients API's</h3>
+        <p>
+          <b>Description : </b> A list of ingredients used for recipe generation
+        </p>
+        <ul>
+          <li><a href="{{url}}all-ingredients">{{url}}all-ingredients</a></li>
+          <li><a href="{{url}}veg-ingredients">{{url}}veg-ingredients</a></li>
+          <li>
+            <a href="{{url}}non-veg-ingredients">{{url}}non-veg-ingredients</a>
+          </li>
+        </ul>
       </li>
     </ul>
   </body>

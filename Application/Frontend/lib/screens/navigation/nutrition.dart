@@ -218,7 +218,6 @@ class _NutritionTabState extends State<NutritionTab> {
     });
     userData.add(["uid", userUid]);
     userData.add(["skipIngredients", skipIngredients]);
-    print(skipIngredients);
     _databaseService.uploadData(userUid, createMap());
   }
 
@@ -246,9 +245,9 @@ class _NutritionTabState extends State<NutritionTab> {
       ))
           ?.files;
     } on PlatformException catch (e) {
-      print("Unsupported operation ${e.toString()}");
+      debugPrint("Unsupported operation ${e.toString()}");
     } catch (ex) {
-      print(ex);
+      debugPrint(ex.toString());
     }
     if (!mounted) return;
     setState(() {
